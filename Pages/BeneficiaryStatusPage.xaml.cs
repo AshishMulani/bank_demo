@@ -1,13 +1,18 @@
-using bank_demo.ViewModels.FeaturesPages;
+using bank_demo.Services;
 
-namespace bank_demo.Pages;
-
-public partial class BeneficiaryStatusPage : ContentPage
+namespace bank_demo.Pages
 {
-    public BeneficiaryStatusPage()
+    public partial class BeneficiaryStatusPage : ContentPage
     {
-        InitializeComponent();
-        BindingContext = new BeneficiaryStatusViewModel();
+        public Beneficiary SelectedBeneficiary { get; set; }
+
+        public BeneficiaryStatusPage(Beneficiary beneficiary)
+        {
+            InitializeComponent();
+            SelectedBeneficiary = beneficiary;
+
+            // Optionally bind the beneficiary data to UI elements
+            BindingContext = this; // Set this page's data context to the passed data
+        }
     }
 }
-

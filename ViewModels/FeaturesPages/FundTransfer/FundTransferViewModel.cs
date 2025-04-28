@@ -1,82 +1,105 @@
 ﻿using System.Collections.ObjectModel;
-using bank_demo.Models;
+using System.Windows.Input;
 using bank_demo.Pages.Fund_Transfer;
+using bank_demo.Services;
 
-
-namespace bank_demo.ViewModels.FeaturesPages.FundTransfer;
-
-public class FundTransferViewModel : BaseViewModel
+namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 {
-    public ObservableCollection<Beneficiary> Beneficiaries { get; set; }
-
-    public string AccountType { get; set; }
-    public string AccountNumber { get; set; }
-    public string OfficeName { get; set; }
-    public string TransferLimit { get; set; }
-    public string BeneficiaryName { get; set; }
-
-    public bool IsListVisible { get; set; } = true;
-    public bool IsAddVisible => !IsListVisible;
-
-    public Command ShowListCommand { get; }
-    public Command ShowAddFormCommand { get; }
-    public Command SubmitCommand { get; }
-
-    public FundTransferViewModel()
+    public class FundTransferViewModel : BaseViewModel
     {
-        Beneficiaries = new ObservableCollection<Beneficiary>
-        {
-            new Beneficiary { Name = "Amit", Description = "Savings Account" },
-            new Beneficiary { Name = "Priya", Description = "Salary Account" }
-        };
+        public ObservableCollection<Beneficiary> Beneficiaries { get; set; }
 
-        ShowListCommand = new Command(() =>
-        {
-            IsListVisible = true;
-            OnPropertyChanged(nameof(IsListVisible));
-            OnPropertyChanged(nameof(IsAddVisible));
-        });
+        public string AccountType { get; set; }
+        public string AccountNumber { get; set; }
+        public string OfficeName { get; set; }
+        public string TransferLimit { get; set; }
+        public string BeneficiaryName { get; set; }
 
-        ShowAddFormCommand = new Command(() =>
-        {
-            IsListVisible = false;
-            OnPropertyChanged(nameof(IsListVisible));
-            OnPropertyChanged(nameof(IsAddVisible));
-        });
+        public bool IsListVisible { get; set; } = true;
+        public bool IsAddVisible => !IsListVisible;
 
-        SubmitCommand = new Command(async () =>
+        public ICommand ShowListCommand { get; }
+        public ICommand ShowAddFormCommand { get; }
+        public ICommand SubmitCommand { get; }
+        public ICommand BeneficiaryTappedCommand { get; }
+
+        public FundTransferViewModel()
         {
-            if (!string.IsNullOrEmpty(BeneficiaryName))
+            // Initialize the Beneficiary list
+            Beneficiaries = new ObservableCollection<Beneficiary>
             {
-                var newBeneficiary = new Beneficiary
+                new Beneficiary { Name = "Amit", Description = "Savings Account" },
+                new Beneficiary { Name = "Priya", Description = "Salary Account" }
+            };
+
+            // Commands setup
+            ShowListCommand = new Command(() =>
+            {
+                IsListVisible = true;
+                OnPropertyChanged(nameof(IsListVisible));
+                OnPropertyChanged(nameof(IsAddVisible));
+            });
+
+            ShowAddFormCommand = new Command(() =>
+            {
+                IsListVisible = false;
+                OnPropertyChanged(nameof(IsListVisible));
+                OnPropertyChanged(nameof(IsAddVisible));
+            });
+
+            SubmitCommand = new Command(async () =>
+            {
+                if (!string.IsNullOrEmpty(BeneficiaryName))
                 {
-                    Name = BeneficiaryName,
-                    Description = AccountType
-                };
+                    var newBeneficiary = new Beneficiary
+                    {
+                        Name = BeneficiaryName,
+                        Description = AccountType
+                    };
 
-                Beneficiaries.Add(newBeneficiary);
-                ClearForm();
-                ShowListCommand.Execute(null);
+                    BeneficiaryService.AddBeneficiary(newBeneficiary);
 
-                // Navigate to amount page
-                await Shell.Current.Navigation.PushAsync(new NavigationPage(new EnterAmountPage(newBeneficiary)));
+                    Beneficiaries.Add(newBeneficiary);
+                    ClearForm();
+                    ShowListCommand.Execute(null);
 
-            }
-        });
-    }
+                    await Shell.Current.GoToAsync($"EnterAmountPage?BeneficiaryName={BeneficiaryName}&AccountType={AccountType}");
 
-    void ClearForm()
-    {
-        AccountType = string.Empty;
-        AccountNumber = string.Empty;
-        OfficeName = string.Empty;
-        TransferLimit = string.Empty;
-        BeneficiaryName = string.Empty;
+                    // Use GoToAsync with proper route and query parameters
+                    
+                }
+            });
 
-        OnPropertyChanged(nameof(AccountType));
-        OnPropertyChanged(nameof(AccountNumber));
-        OnPropertyChanged(nameof(OfficeName));
-        OnPropertyChanged(nameof(TransferLimit));
-        OnPropertyChanged(nameof(BeneficiaryName));
+            BeneficiaryTappedCommand = new Command<Beneficiary>(async (selectedBeneficiary) =>
+            {
+                if (selectedBeneficiary != null)
+                {
+                    // Use Shell.Current.GoToAsync with query parameters properly
+                    var queryParams = new Dictionary<string, string>
+                    {
+                        { "BeneficiaryName", selectedBeneficiary.Name },
+                        { "AccountType", selectedBeneficiary.Description }
+                    };
+
+                    // Use GoToAsync with proper route and query parameters
+                    await Shell.Current.GoToAsync("EnterAmountPage?BeneficiaryName={BeneficiaryName}&AccountType={AccountType}");
+                }
+            });
+        }
+
+        void ClearForm()
+        {
+            AccountType = string.Empty;
+            AccountNumber = string.Empty;
+            OfficeName = string.Empty;
+            TransferLimit = string.Empty;
+            BeneficiaryName = string.Empty;
+
+            OnPropertyChanged(nameof(AccountType));
+            OnPropertyChanged(nameof(AccountNumber));
+            OnPropertyChanged(nameof(OfficeName));
+            OnPropertyChanged(nameof(TransferLimit));
+            OnPropertyChanged(nameof(BeneficiaryName));
+        }
     }
 }

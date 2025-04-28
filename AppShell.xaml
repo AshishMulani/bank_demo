@@ -102,11 +102,12 @@
     
     
     <!--Fund Transfer-->
-    
-    <ShellContent Route="enteramount" ContentTemplate="{DataTemplate local:EnterAmountPage}" />
-    <ShellContent Route="transfermethod" ContentTemplate="{DataTemplate local:TransferMethodPage}" />
-    <ShellContent Route="receipt" ContentTemplate="{DataTemplate local:TransactionReceiptPage}" />
-
+    <TabBar>
+        <ShellContent Route="enteramount" ContentTemplate="{DataTemplate local:EnterAmountPage}" />
+        
+        <ShellContent Route="transfermethod" ContentTemplate="{DataTemplate local:TransferMethodPage}" />
+        <ShellContent Route="receipt" ContentTemplate="{DataTemplate local:TransactionReceiptPage}" />
+    </TabBar>
 
 
 

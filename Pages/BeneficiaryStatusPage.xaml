@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages" 
@@ -8,11 +7,9 @@
 
     <ContentPage.BindingContext>
         <vm:BeneficiaryStatusViewModel />
-        <!-- Binding the ViewModel -->
     </ContentPage.BindingContext>
 
     <VerticalStackLayout>
-        
 
         <Button Text="Add Beneficiary"
                 Command="{Binding ListBeneficiaryCommand}"
@@ -20,5 +17,15 @@
                 TextColor="White"
                 CornerRadius="8"
                 FontSize="16"/>
+
+        <!-- List of Beneficiaries -->
+        <ListView ItemsSource="{Binding Beneficiaries}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </VerticalStackLayout>
 </ContentPage>

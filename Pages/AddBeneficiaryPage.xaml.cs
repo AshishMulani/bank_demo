@@ -2,7 +2,7 @@ using Microsoft.Maui.Controls;
 using System;
 using bank_demo.ViewModels.FeaturesPages;
 using bank_demo.Pages.Fund_Transfer;
-using bank_demo.Models;
+using bank_demo.Services;
 
 namespace bank_demo.Pages;
 

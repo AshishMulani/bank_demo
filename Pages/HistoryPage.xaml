@@ -8,7 +8,7 @@
              BackgroundColor="#f8f8f8">
 
     <ContentPage.BindingContext>
-        <vm:HistoryViewModel/>
+        <vm:HistoryViewModel />
     </ContentPage.BindingContext>
 
     <VerticalStackLayout Padding="10,10,10,20">
@@ -44,13 +44,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame BackgroundColor="White"
-                               Padding="10"
-                               Margin="5"
-                               BorderColor="#D1D1D1"
-                               HasShadow="True"
-                               CornerRadius="10"
-                               Opacity="1.0">
+                        <!-- Apply Border around each transaction item -->
+                        <Border Stroke="Gray" StrokeThickness="1" Padding="10" Margin="5" BackgroundColor="White">
+
                             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
                                 <Image Source="{Binding Icon}"
                                        WidthRequest="30"
@@ -73,7 +69,7 @@
                                        HorizontalOptions="End"
                                        VerticalOptions="Center" />
                             </HorizontalStackLayout>
-                        </Frame>
+                        </Border>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

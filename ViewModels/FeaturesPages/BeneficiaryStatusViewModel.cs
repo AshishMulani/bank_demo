@@ -1,18 +1,17 @@
-﻿using System.Windows.Input;
-using Microsoft.Maui.Controls;
+﻿using bank_demo.Services;
+using System.Collections.ObjectModel;
+using bank_demo.Services;
 
 namespace bank_demo.ViewModels.FeaturesPages
 {
-    public class BeneficiaryStatusViewModel
+    public class BeneficiaryStatusViewModel : BaseViewModel
     {
-        public ICommand ListBeneficiaryCommand { get; }
+        public ObservableCollection<Beneficiary> Beneficiaries { get; set; }
 
         public BeneficiaryStatusViewModel()
         {
-            ListBeneficiaryCommand = new Command(async () =>
-            {
-                await Shell.Current.GoToAsync("///BeneficiaryListPage");
-            });
+            // Load beneficiaries from the service
+            Beneficiaries = new ObservableCollection<Beneficiary>(BeneficiaryService.Beneficiaries);
         }
     }
 }

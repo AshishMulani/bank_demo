@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:bank_demo"
+             xmlns:vm="clr-namespace:bank_demo.ViewModels"
+             xmlns:views="clr-namespace:bank_demo"
+             x:Class="bank_demo.HomePage"
+             x:DataType="vm:HomeViewModel"
+             BackgroundColor="White"
+             Title="Home"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             Padding="{OnPlatform iOS='0,50,0,0', Android='0,0,0,0'}">
+
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!-- Overlay -->
+        <BoxView x:Name="MenuOverlay"
+                 BackgroundColor="Black"
+                 Opacity="0.7"
+                 IsVisible="False"
+                 InputTransparent="False"
+                 ZIndex="1"
+                 Margin="280,0,0,0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnOverlayTapped" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <!-- Menu Drawer Component -->
+        <components:MenuDrawerView x:Name="MenuDrawer"
+                                   TranslationX="-300"
+                           
+                                   Opacity="0"
+                                   InputTransparent="True"
+                                   IsVisible="True"
+                                   ZIndex="2"
+                                   ProfileCommand="{Binding ProfileCommand}"
+                                   TransactionHistoryCommand="{Binding TransactionHistoryCommand}"
+                                   BeneficiaryStatusCommand="{Binding BeneficiaryStatusCommand}"
+                                   ContactSupportCommand="{Binding ContactSupportCommand}"
+                                   SecuritySettingsCommand="{Binding SecuritySettingsCommand}"
+                                   TermsCommand="{Binding TermsCommand}"
+                                   LogoutCommand="{Binding LogoutCommand}" />
+
+
+
+
+
+        <!-- Main UI Content -->
+        <Grid RowDefinitions="Auto,*,Auto" ZIndex="0">
+
+            <!-- Custom Title Bar -->
+            <Grid Grid.Row="0" Padding="10" HeightRequest="50" BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+            
+                    <!-- Hamburger Button -->
+                <Grid HeightRequest="45" WidthRequest="45" HorizontalOptions="Start" VerticalOptions="Center" Padding="10">
+                    <ImageButton Source="hamburger_icon.png"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="Fill"
+                                 VerticalOptions="Fill"
+                                 Aspect="AspectFit"
+                                 Clicked="OnHamburgerClicked"/>
+                </Grid>
+
+
+
+
+
+                <!-- Page Title -->
+                <Label Text="Home"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Margin="10,0,0,0"
+                       Grid.Column="1"
+                       TextColor="Black"/>
+            </Grid>
+
+            <!-- Scrollable Main Content -->
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                    <!-- User Card -->
+                    <Border BackgroundColor="#e0f7fa"
+                            Stroke="Gray"
+                            StrokeThickness="1"
+                            Padding="15"
+                            StrokeShape="RoundRectangle 10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#512BD4" Offset="0.1" />
+                                <GradientStop Color="#478ed1" Offset="3.6" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="{Binding CustomerName}"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                            <Label Text="{Binding SavingsBalance, StringFormat='Savings Balance: ₹{0:F2}'}"
+                                   FontSize="18"
+                                   TextColor="White"
+                                   FontAttributes="Bold"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+
+                    <!-- Statement and History -->
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="100" >
+                        <!-- Statement -->
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" BackgroundColor="SkyBlue" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="statement.png" WidthRequest="50" HeightRequest="50">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding StatementCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Border>
+                            <Label Text="Statement" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+
+                        <!-- QR and Scan Icons -->
+                  
+                        <!-- QR Code -->
+                          <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">  
+                                <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                    <GradientStop Color="#478ed1" Offset="3.6" />
+                                </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="qrcode.png" WidthRequest="50" HeightRequest="50">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding QRCommand}" />
+                                    </Image.GestureRecognizers>
+                                    </Image>
+                                </Border>
+                                <Label Text="My QR Code" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
+                            <!-- Scan to Pay -->
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="scantopay.png" WidthRequest="50" HeightRequest="50" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ScanToPayCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Border>
+                            <Label Text="Scan to Pay" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+
+                        <!-- History -->
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="history.png" WidthRequest="50" HeightRequest="50">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding HistoryCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Border>
+                            <Label Text="History" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        
+                    </HorizontalStackLayout>
+
+                    <!-- Add Beneficiary & Payments -->
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
+                        <!-- Add Beneficiary -->
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="adbenef.png" WidthRequest="50" HeightRequest="50">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding AddBeneficiaryCommand}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            </Border>
+                            <Label Text="Add Beneficiary" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                      
+
+                        <!-- Payments -->
+                         <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="pay.png" WidthRequest="50" HeightRequest="50">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PaymentsCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Border>
+                            <Label Text="Payments" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                      
+                    </HorizontalStackLayout>
+                    
+ <!--  Fund Transfer Investment -->
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
+                        <!-- Add Fund Transfer -->
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="fund.png" WidthRequest="55" HeightRequest="55">
+                                <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding FundTransferCommand}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            </Border>
+                            <Label Text="Fund Transfer" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                      
+
+                        <!-- Investment -->
+                         <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Image Source="invest.png" WidthRequest="50" HeightRequest="50">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PaymentsCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Border>
+                            <Label Text="Investment" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                      
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Bottom Navigation -->
+            <Grid Grid.Row="2" BackgroundColor="LightGrey" HeightRequest="60" Padding="2,5">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#ac99ea" Offset="0.1" />
+                        <GradientStop Color="#478ed1" Offset="3.6" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- About -->
+                <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                    <Image Source="about.png" WidthRequest="28" HeightRequest="28"/>
+                    <Label Text="About" FontSize="14" TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AboutCommand}" />
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <!-- Home -->
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                    <Image Source="home.png" WidthRequest="28" HeightRequest="28"/>
+                    <Label Text="Home" FontSize="14" TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HomeCommand}" />
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <!-- Settings -->
+                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                    <Image Source="settings.png" WidthRequest="28" HeightRequest="28"/>
+                    <Label Text="Settings" FontSize="14" TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SettingsCommand}" />
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

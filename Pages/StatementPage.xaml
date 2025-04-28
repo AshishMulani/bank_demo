@@ -1,0 +1,43 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages"
+             x:Class="bank_demo.Pages.StatementPage">
+    <ContentPage.BindingContext>
+        <vm:StatementViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Select Account Type:" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding AccountTypes}" SelectedItem="{Binding SelectedAccountType}" />
+
+            <Label Text="Select Time Period:" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding TimePeriodOptions}" SelectedItem="{Binding SelectedTimePeriod}" />
+
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding IsCustomDateRange}">
+                <DatePicker Date="{Binding FromDate}" />
+                <DatePicker Date="{Binding ToDate}" />
+            </StackLayout>
+
+            <Button Text="View Statement" Command="{Binding LoadStatementCommand}" />
+
+            <CollectionView ItemsSource="{Binding Transactions}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                            <StackLayout>
+                                <Label Text="{Binding Description}" />
+                                <Label Text="{Binding Date, StringFormat='{0:dd MMM yyyy}'}" FontSize="Small" />
+                                <Label Text="{Binding Amount, StringFormat='₹{0:F2}'}" TextColor="Green"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Export to PDF" Command="{Binding ExportPdfCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

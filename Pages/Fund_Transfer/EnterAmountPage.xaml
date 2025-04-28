@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bank_demo.Pages.Fund_Transfer.EnterAmountPage"
+             Title="Enter Amount"
+             BackgroundColor="#f2f2f7">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Beneficiary Name -->
+        <Label x:Name="BeneficiaryNameLabel"
+               Text="{Binding BeneficiaryName}" 
+               FontSize="24" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <!-- Beneficiary Account Type -->
+        <Label x:Name="AccountTypeLabel"
+               Text="{Binding AccountType}"
+               FontSize="16"
+               TextColor="Gray"
+               HorizontalOptions="Center"/>
+
+        <!-- Enter Amount -->
+        <Entry Placeholder="Enter Amount"
+               Keyboard="Numeric"
+               Text="{Binding Amount}"
+               FontSize="18"
+               BackgroundColor="White"
+               Margin="0,20,0,0"/>
+
+        <!-- Continue Button -->
+        <Button Text="Continue"
+                Command="{Binding ContinueCommand}"
+                BackgroundColor="Blue"
+                TextColor="White"
+                CornerRadius="25"
+                FontSize="18"
+                Margin="0,40,0,0"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

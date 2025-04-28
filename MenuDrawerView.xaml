@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bank_demo.MenuDrawerView"
+             x:Name="Drawer"
+             
+             BackgroundColor="White"
+             Opacity="1"
+             WidthRequest="280"
+             Padding="20"
+             HorizontalOptions="Start"
+             VerticalOptions="Fill">
+
+    
+
+    
+        <VerticalStackLayout Spacing="25" VerticalOptions="Start">
+
+            <!-- Menu Item Template -->
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=ProfileCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="profile.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Profile" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=TransactionHistoryCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="thistory.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Transaction History" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=BeneficiaryStatusCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="benef.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Beneficiary Status" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=ContactSupportCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="contact.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Contact Support" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=SecuritySettingsCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="security.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Security Settings" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=TermsCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="terms.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Terms &amp; Conditions" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Drawer}, Path=LogoutCommand}" />
+                </Grid.GestureRecognizers>
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="logout.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Logout" FontSize="16" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+        </VerticalStackLayout>
+    
+  
+</ContentView>

@@ -1,0 +1,193 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = bank_demo
+build_property.ProjectDir = C:\Users\ashum\source\repos\bank_demo\bank_demo\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/About.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.About.xaml
+build_metadata.AdditionalFiles.TargetPath = About.xaml
+build_metadata.AdditionalFiles.RelativePath = About.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/ForgotPasswordPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.ForgotPasswordPage.xaml
+build_metadata.AdditionalFiles.TargetPath = ForgotPasswordPage.xaml
+build_metadata.AdditionalFiles.RelativePath = ForgotPasswordPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = HomePage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = LoginPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/MenuDrawerView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.MenuDrawerView.xaml
+build_metadata.AdditionalFiles.TargetPath = MenuDrawerView.xaml
+build_metadata.AdditionalFiles.RelativePath = MenuDrawerView.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/MoreOptionsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.MoreOptionsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MoreOptionsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MoreOptionsPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/AddBeneficiaryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.AddBeneficiaryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddBeneficiaryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddBeneficiaryPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/BeneficiaryStatusPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.BeneficiaryStatusPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\BeneficiaryStatusPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\BeneficiaryStatusPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/ContactSupportPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.ContactSupportPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ContactSupportPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ContactSupportPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/Fund_Transfer/EnterAmountPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.Fund_Transfer.EnterAmountPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Fund_Transfer\EnterAmountPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Fund_Transfer\EnterAmountPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/Fund_Transfer/FundTransferPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.Fund_Transfer.FundTransferPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Fund_Transfer\FundTransferPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Fund_Transfer\FundTransferPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/Fund_Transfer/TransactionReceiptPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.Fund_Transfer.TransactionReceiptPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Fund_Transfer\TransactionReceiptPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Fund_Transfer\TransactionReceiptPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/Fund_Transfer/TransferMethodPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.Fund_Transfer.TransferMethodPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Fund_Transfer\TransferMethodPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Fund_Transfer\TransferMethodPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/HistoryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.HistoryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\HistoryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\HistoryPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/MyQRCodePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.MyQRCodePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MyQRCodePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MyQRCodePage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/PaymentsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.PaymentsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PaymentsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PaymentsPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ProfilePage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/ScanToPayPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.ScanToPayPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ScanToPayPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ScanToPayPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/SecuritySettingsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.SecuritySettingsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\SecuritySettingsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\SecuritySettingsPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/StatementPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.StatementPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\StatementPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\StatementPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/TermsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.TermsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\TermsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\TermsPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/TransactionHistoryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.TransactionHistoryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\TransactionHistoryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\TransactionHistoryPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Settings.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Settings.xaml
+build_metadata.AdditionalFiles.TargetPath = Settings.xaml
+build_metadata.AdditionalFiles.RelativePath = Settings.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/SignupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.SignupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SignupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SignupPage.xaml

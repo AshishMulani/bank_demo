@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bank_demo.Pages.AddBeneficiaryPage"
+             Title="Add Beneficiary"
+             BackgroundColor="White"  NavigationPage.HasBackButton="True">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Add New Beneficiary"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
+        HeightRequest="50" Padding="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                  <Entry x:Name="BeneficiaryNameEntry"
+Placeholder="Beneficiary Name"
+FontSize="15"
+BackgroundColor="Transparent"
+TextColor="Black" />
+                </Border>
+
+            <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
+HeightRequest="50" Padding="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="AccountNumberEntry"
+                   Placeholder="Account Number"
+                   Keyboard="Numeric"
+                       BackgroundColor="Transparent"
+                   FontSize="15" TextColor="Black" /></Border>
+
+            <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
+HeightRequest="50" Padding="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="IFSCEntry"
+                   Placeholder="IFSC Code"
+                       BackgroundColor="Transparent"
+                   FontSize="15" TextColor="Black"/></Border>
+
+            <Button Text="Add Beneficiary"
+                    Command="{Binding AddBeneficiaryCommand}"
+                    BackgroundColor="Blue"
+ TextColor="White"
+ HeightRequest="50"
+ CornerRadius="10"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

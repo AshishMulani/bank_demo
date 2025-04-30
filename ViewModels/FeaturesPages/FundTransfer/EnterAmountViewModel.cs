@@ -1,49 +1,89 @@
 ﻿using System.Windows.Input;
-using Microsoft.Maui.Controls;
 using bank_demo.Services;
 
 namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 {
     public class EnterAmountViewModel : BaseViewModel
     {
-        public string BeneficiaryName { get; set; }
-        public string AccountType { get; set; }
-        public decimal Amount { get; set; }
+        private string _beneficiaryName;
+        public string BeneficiaryName
+        {
+            get => _beneficiaryName;
+            set => SetProperty(ref _beneficiaryName, value);
+        }
 
-        public Beneficiary SelectedBeneficiary { get; set; }
+        private string _accountType;
+        public string AccountType
+        {
+            get => _accountType;
+            set => SetProperty(ref _accountType, value);
+        }
 
-        public ICommand ContinueCommand { get; }
-        public ICommand BackCommand { get; }
+        private string _amount;
+        public string Amount
+        {
+            get => _amount;
+            set => SetProperty(ref _amount, value);
+        }
+
+        private string _remarks;
+        public string Remarks
+        {
+            get => _remarks;
+            set => SetProperty(ref _remarks, value);
+        }
+
+        private string _selectedTransferOption;
+        public string SelectedTransferOption
+        {
+            get => _selectedTransferOption;
+            set => SetProperty(ref _selectedTransferOption, value);
+        }
+
+        public List<string> TransferOptions { get; } = new List<string> { "NEFT", "IMPS" };
+
+
+        public ICommand ProceedCommand { get; }
 
         public EnterAmountViewModel()
         {
-            ContinueCommand = new Command(OnContinue);
-            BackCommand = new Command(OnBack);
+            ProceedCommand = new Command(OnProceed);
+            SelectedTransferOption = TransferOptions.First();
         }
 
-        public EnterAmountViewModel(Beneficiary beneficiary)
+        private async void OnProceed()
         {
-            SelectedBeneficiary = beneficiary;
-            BeneficiaryName = beneficiary?.Name;
-            AccountType = beneficiary?.Description;
-        }
-
-        private async void OnContinue()
-        {
-            if (Amount <= 0)
+            if (string.IsNullOrEmpty(Amount))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a valid amount", "OK");
+                await Shell.Current.DisplayAlert("Error", "Please enter an amount", "OK");
                 return;
             }
 
-            // Navigate to the transfer method page
-            await Shell.Current.GoToAsync("TransferMethodPage?BeneficiaryName=" + SelectedBeneficiary.Name + "&Amount=" + Amount);
+            //await Shell.Current.GoToAsync("ConfirmationPage"); // Replace with real route
+
+            string summary = $"Name: {BeneficiaryName}\nAccount Type: {AccountType}\nAmount: ₹{Amount}\nRemarks: {Remarks}\nTransfer Mode: {SelectedTransferOption}";
+
+            bool confirm = await Shell.Current.DisplayAlert("Confirm Transfer", summary, "Proceed", "Cancel");
+
+            if (confirm)
+            {
+                // Proceed to next page or complete transaction
+                await Shell.Current.DisplayAlert("Success", "Transfer Initiated", "OK");
+                if (Shell.Current.Navigation.NavigationStack.Count > 1)
+                {
+                    // Make sure we are not directly on the root page.
+                    await Shell.Current.Navigation.PopAsync();
+                }
+                else
+                {
+                    // Handle root navigation if necessary, for example, navigate back to the home screen.
+                    await Shell.Current.GoToAsync("Home");
+                }
+
+            }
         }
 
-        private async void OnBack()
-        {
-            // Navigate back to the previous page (FundTransferPage)
-            await Shell.Current.GoToAsync("..");
-        }
+
+
     }
 }

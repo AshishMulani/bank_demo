@@ -20,7 +20,7 @@
                HorizontalOptions="Center"/>
 
         <!-- Username Field -->
-        <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
+        <Border Stroke="Gray" StrokeThickness="2" 
                 HeightRequest="50" WidthRequest="300" Padding="5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10"/>
@@ -28,7 +28,7 @@
             <HorizontalStackLayout Spacing="10">
                 <Image Source="user_icon.png" HeightRequest="24" WidthRequest="24"/>
                 <Entry Placeholder="Enter Username"
-                       Text="{Binding Username}"
+                       Text="{Binding Username}" TextColor="Black"
                        WidthRequest="250" VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Border>
@@ -43,7 +43,7 @@
                 <Image Source="lock_icon.png" HeightRequest="24" WidthRequest="24"/>
                 <Entry Placeholder="Enter Password"
                        IsPassword="True"
-                       Text="{Binding Password}"
+                       Text="{Binding Password}" TextColor="Black" Keyboard="Numeric"
                        WidthRequest="250" VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Border>
@@ -51,9 +51,9 @@
         <!-- Remember Me & Forgot Password -->
         <HorizontalStackLayout WidthRequest="300" HorizontalOptions="FillAndExpand" Spacing="10">
             <!-- Remember Me -->
-            <HorizontalStackLayout Spacing="2">
-                <CheckBox IsChecked="{Binding IsRememberMe}" />
-                <Label Text="Remember Me" VerticalOptions="Center"/>
+            <HorizontalStackLayout>
+                <CheckBox IsChecked="{Binding IsRememberMe}" Color="Blue" />
+                <Label Text="Remember Me" VerticalOptions="Center" TextColor="Black"/>
             </HorizontalStackLayout>
 
             <!-- Forgot Password -->
@@ -77,8 +77,8 @@
                 CornerRadius="10"/>
 
         <!-- Sign Up -->
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Label Text="Don't have an account?" VerticalOptions="Center"/>
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Label Text="Don't have an account?" VerticalOptions="Center" TextColor="Black"/>
             <Label Text="Sign Up" TextColor="Blue" VerticalOptions="Center">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SignUpCommand}" />

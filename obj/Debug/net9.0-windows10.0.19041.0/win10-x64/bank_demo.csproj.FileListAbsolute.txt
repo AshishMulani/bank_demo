@@ -595,3 +595,6 @@ C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-windows10.0.190
 C:\Users\ashum\source\repos\bank_demo\bank_demo\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\adbenef.scale-100.png
 C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\adbenef.scale-100.png
 C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\bank_demo.sourcelink.json
+C:\Users\ashum\source\repos\bank_demo\bank_demo\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
+C:\Users\ashum\source\repos\bank_demo\bank_demo\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\down_arrow.scale-100.png
+C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\down_arrow.scale-100.png

@@ -3,52 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages.FundTransfer"
              x:Class="bank_demo.Pages.Fund_Transfer.EnterAmountPage"
-             x:DataType="vm:EnterAmountViewModel"
-             Title="Enter Amount"
-             BackgroundColor="#f2f2f7">
+             Title="Enter Amount">
 
     <ContentPage.BindingContext>
-        <vm:EnterAmountViewModel/>
+        <vm:EnterAmountViewModel />
     </ContentPage.BindingContext>
+    
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Beneficiary:" FontAttributes="Bold" />
+        <Label Text="{Binding BeneficiaryName}" />
 
-    <!-- Automatically show the back button -->
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Back" Command="{Binding BackCommand}" />
-    </ContentPage.ToolbarItems>
+        <Label Text="Account Type:" FontAttributes="Bold" />
+        <Label Text="{Binding AccountType}" />
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="Amount:" />
+        <Entry Text="{Binding Amount}" Keyboard="Numeric" />
 
-        <!-- Beneficiary Name -->
-        <Label x:Name="BeneficiaryNameLabel"
-               Text="{Binding BeneficiaryName}" 
-               FontSize="24" 
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+        <Label Text="Remarks:" />
+        <Entry Text="{Binding Remarks}" />
 
-        <!-- Beneficiary Account Type -->
-        <Label x:Name="AccountTypeLabel"
-               Text="{Binding AccountType}"
-               FontSize="16"
-               TextColor="Gray"
-               HorizontalOptions="Center"/>
+        <Label Text="Transfer Option:" />
+        <Label Text="Transfer Mode" FontAttributes="Bold" />
 
-        <!-- Enter Amount -->
-        <Entry Placeholder="Enter Amount"
-               Keyboard="Numeric"
-               Text="{Binding Amount}"
-               FontSize="18"
-               BackgroundColor="White"
-               Margin="0,20,0,0"/>
+        <Grid>
+            <Picker ItemsSource="{Binding TransferOptions}"
+            SelectedItem="{Binding SelectedTransferOption}"
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            Margin="0" />
 
-        <!-- Continue Button -->
-        <Button Text="Continue"
-                Command="{Binding ContinueCommand}"
-                BackgroundColor="Blue"
-                TextColor="White"
-                CornerRadius="25"
-                FontSize="18"
-                Margin="0,40,0,0"/>
+            <!-- Visual down arrow overlay (no IsHitTestVisible needed) -->
+            <Image Source="down_arrow.png"
+           HeightRequest="20"
+           WidthRequest="20"
+           HorizontalOptions="End"
+           VerticalOptions="Center"
+           Margin="0,0,10,0" />
+        </Grid>
 
+
+
+
+        <Button Text="Submit" Command="{Binding ProceedCommand}" />
     </VerticalStackLayout>
 
 </ContentPage>

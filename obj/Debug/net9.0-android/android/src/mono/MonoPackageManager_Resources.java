@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "bank_demo.dll" comes first in this list. */
 		"bank_demo.dll",
 		"BouncyCastle.Cryptography.dll",
+		"CommunityToolkit.Mvvm.dll",
 		"Google.Protobuf.dll",
 		"GoogleGson.dll",
 		"K4os.Compression.LZ4.dll",

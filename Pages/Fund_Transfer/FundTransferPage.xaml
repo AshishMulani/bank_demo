@@ -4,8 +4,7 @@
              xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages.FundTransfer"
              x:Class="bank_demo.Pages.Fund_Transfer.FundTransferPage"
              x:Name="RootPage"
-             Title="Fund Transfer"
-             BackgroundColor="#f2f2f7">
+             Title="Fund Transfer">
 
     <ContentPage.BindingContext>
         <vm:FundTransferViewModel/>
@@ -61,7 +60,7 @@
         <ContentView IsVisible="{Binding IsAddVisible}">
             <VerticalStackLayout Spacing="10">
                 <Entry Placeholder="Savings Account" Text="{Binding AccountType}" />
-                <Entry Placeholder="Account Number" Text="{Binding AccountNumber}" />
+                <Entry Placeholder="Account Number" Text="{Binding AccountNumber}"/>
                 <Entry Placeholder="Office Name" Text="{Binding OfficeName}" />
                 <Entry Placeholder="Transfer Limit" Text="{Binding TransferLimit}" />
                 <Entry Placeholder="Beneficiary Name" Text="{Binding BeneficiaryName}" />

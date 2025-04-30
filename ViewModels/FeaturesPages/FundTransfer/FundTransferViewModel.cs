@@ -82,7 +82,8 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                     };
 
                     // Use GoToAsync with proper route and query parameters
-                    await Shell.Current.GoToAsync("EnterAmountPage?BeneficiaryName={BeneficiaryName}&AccountType={AccountType}");
+                    await Shell.Current.GoToAsync($"EnterAmountPage?BeneficiaryName={Uri.EscapeDataString(selectedBeneficiary.Name)}&AccountType={Uri.EscapeDataString(selectedBeneficiary.Description)}");
+
                 }
             });
         }

@@ -112,7 +112,7 @@ target triple = "x86_64-unknown-linux-android21"
 	i32 3, ; uint32_t package_naming_policy
 	i32 6, ; uint32_t environment_variable_count
 	i32 0, ; uint32_t system_property_count
-	i32 332, ; uint32_t number_of_assemblies_in_apk
+	i32 333, ; uint32_t number_of_assemblies_in_apk
 	i32 65, ; uint32_t bundled_assembly_name_width
 	i32 52, ; uint32_t number_of_dso_cache_entries
 	i32 0, ; uint32_t number_of_aot_cache_entries
@@ -1163,9 +1163,11 @@ target triple = "x86_64-unknown-linux-android21"
 @_XamarinAndroidBundledAssembly_name_14a_14a = internal dso_local global [65 x i8] zeroinitializer, align 16
 @_XamarinAndroidBundledAssembly_file_name_14b_14b = internal dso_local global [73 x i8] zeroinitializer, align 16
 @_XamarinAndroidBundledAssembly_name_14b_14b = internal dso_local global [65 x i8] zeroinitializer, align 16
+@_XamarinAndroidBundledAssembly_file_name_14c_14c = internal dso_local global [73 x i8] zeroinitializer, align 16
+@_XamarinAndroidBundledAssembly_name_14c_14c = internal dso_local global [65 x i8] zeroinitializer, align 16
 
 ; Bundled assembly name buffers, all 65 bytes long
-@bundled_assemblies = dso_local local_unnamed_addr global [332 x %struct.XamarinAndroidBundledAssembly] [
+@bundled_assemblies = dso_local local_unnamed_addr global [333 x %struct.XamarinAndroidBundledAssembly] [
 	%struct.XamarinAndroidBundledAssembly {
 		i32 -1, ; int32_t file_fd
 		ptr @_XamarinAndroidBundledAssembly_file_name_0_0, ; char* file_name
@@ -4153,7 +4155,16 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr null, ; uint8_t* data
 		i32 65, ; uint32_t name_length
 		ptr @_XamarinAndroidBundledAssembly_name_14b_14b; char* name
-	} ; 331
+	}, ; 331
+	%struct.XamarinAndroidBundledAssembly {
+		i32 -1, ; int32_t file_fd
+		ptr @_XamarinAndroidBundledAssembly_file_name_14c_14c, ; char* file_name
+		i32 0, ; uint32_t data_offset
+		i32 0, ; uint32_t data_size
+		ptr null, ; uint8_t* data
+		i32 65, ; uint32_t name_length
+		ptr @_XamarinAndroidBundledAssembly_name_14c_14c; char* name
+	} ; 332
 ], align 16
 
 @assembly_store_bundled_assemblies = dso_local local_unnamed_addr global [0 x %struct.AssemblyStoreSingleAssemblyRuntimeData] zeroinitializer, align 8

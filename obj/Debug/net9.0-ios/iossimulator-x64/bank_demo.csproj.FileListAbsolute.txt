@@ -382,3 +382,5 @@ C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-ios\iossimulato
 C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\lpg.png
 C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\adbenef.png
 C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-ios\iossimulator-x64\bank_demo.sourcelink.json
+C:\Users\ashum\source\repos\bank_demo\bank_demo\bin\Debug\net9.0-ios\iossimulator-x64\CommunityToolkit.Mvvm.dll
+C:\Users\ashum\source\repos\bank_demo\bank_demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\down_arrow.png

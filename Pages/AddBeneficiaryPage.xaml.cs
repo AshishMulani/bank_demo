@@ -28,12 +28,13 @@ public partial class AddBeneficiaryPage : ContentPage
 
         if (_fromFundTransfer)
         {
-            await Navigation.PushAsync(new EnterAmountPage(newBeneficiary));
+            var route = $"EnterAmountPage?BeneficiaryName={Uri.EscapeDataString(newBeneficiary.Name)}&AccountType={Uri.EscapeDataString(newBeneficiary.Description)}";
+            await Shell.Current.GoToAsync(route);
         }
         else
         {
             await DisplayAlert("Success", "Beneficiary added", "OK");
-            await Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
         }
     }
 

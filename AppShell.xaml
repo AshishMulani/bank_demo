@@ -102,12 +102,22 @@
     
     
     <!--Fund Transfer-->
-    <TabBar>
-        <ShellContent Route="enteramount" ContentTemplate="{DataTemplate local:EnterAmountPage}" />
-        
-        <ShellContent Route="transfermethod" ContentTemplate="{DataTemplate local:TransferMethodPage}" />
-        <ShellContent Route="receipt" ContentTemplate="{DataTemplate local:TransactionReceiptPage}" />
-    </TabBar>
+    <!-- Fund Transfer Steps -->
+    <ShellContent Route="EnterAmountPage"
+              ContentTemplate="{DataTemplate local:EnterAmountPage}"
+              Shell.FlyoutBehavior="Disabled"
+              Shell.NavBarIsVisible="True" />
+    
+    <ShellContent Route="transfermethod"
+              ContentTemplate="{DataTemplate local:TransferMethodPage}"
+              Shell.FlyoutBehavior="Disabled"
+              Shell.NavBarIsVisible="True" />
+    
+    <ShellContent Route="receipt"
+              ContentTemplate="{DataTemplate local:TransactionReceiptPage}"
+              Shell.FlyoutBehavior="Disabled"
+              Shell.NavBarIsVisible="True" />
+
 
 
 

@@ -4,14 +4,13 @@
              xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages"
              x:Class="bank_demo.Pages.HistoryPage"
              x:DataType="vm:HistoryViewModel"
-             Title="Transaction History"
-             BackgroundColor="#f8f8f8">
+             Title="Transaction History">
 
     <ContentPage.BindingContext>
-        <vm:HistoryViewModel />
+        <vm:HistoryViewModel/>
     </ContentPage.BindingContext>
-
-    <VerticalStackLayout Padding="10,10,10,20">
+ 
+    <VerticalStackLayout Padding="10">
 
         <Label Text="Transaction History"
                FontSize="22"
@@ -20,62 +19,14 @@
                Padding="0,20"
                TextColor="Black" />
 
-        <ListView x:Name="TransactionsListView"
-                  ItemsSource="{Binding Transactions}"
-                  IsGroupingEnabled="True"
-                  GroupDisplayBinding="{Binding GroupTitle}"
-                  SeparatorVisibility="None"
-                  HasUnevenRows="True"
-                  BackgroundColor="Transparent">
-
-            <ListView.GroupHeaderTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label Text="{Binding GroupTitle}"
-                               FontAttributes="Bold"
-                               FontSize="18"
-                               TextColor="#444"
-                               BackgroundColor="#e0e0e0"
-                               Padding="10,5" />
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.GroupHeaderTemplate>
-
+        <ListView ItemsSource="{Binding Transactions}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <!-- Apply Border around each transaction item -->
-                        <Border Stroke="Gray" StrokeThickness="1" Padding="10" Margin="5" BackgroundColor="White">
-
-                            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                                <Image Source="{Binding Icon}"
-                                       WidthRequest="30"
-                                       HeightRequest="30"
-                                       VerticalOptions="Center" />
-
-                                <VerticalStackLayout Spacing="5" HorizontalOptions="StartAndExpand">
-                                    <Label Text="{Binding Description}"
-                                           FontAttributes="Bold"
-                                           FontSize="16"
-                                           TextColor="#333" />
-                                    <Label Text="{Binding Amount, StringFormat='₹{0:N2}'}"
-                                           FontSize="14"
-                                           TextColor="Green" />
-                                </VerticalStackLayout>
-
-                                <Label Text="{Binding Date, StringFormat='{0:dd MMM yyyy}'}"
-                                       FontSize="12"
-                                       TextColor="Gray"
-                                       HorizontalOptions="End"
-                                       VerticalOptions="Center" />
-                            </HorizontalStackLayout>
-                        </Border>
-                    </ViewCell>
+                    <TextCell Text="{Binding Description}" Detail="{Binding Amount}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
-
         </ListView>
 
-    </VerticalStackLayout>
 
+    </VerticalStackLayout>
 </ContentPage>

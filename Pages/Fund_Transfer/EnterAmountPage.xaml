@@ -10,6 +10,7 @@
     </ContentPage.BindingContext>
     
     <VerticalStackLayout Padding="20" Spacing="15">
+        
         <Label Text="Beneficiary:" FontAttributes="Bold" />
         <Label Text="{Binding BeneficiaryName}" />
 
@@ -28,7 +29,7 @@
         <Grid>
             <Picker ItemsSource="{Binding TransferOptions}"
             SelectedItem="{Binding SelectedTransferOption}"
-            BackgroundColor="White"
+            
             HorizontalOptions="FillAndExpand"
             Margin="0" />
 
@@ -45,6 +46,10 @@
 
 
         <Button Text="Submit" Command="{Binding ProceedCommand}" />
+
+        
+
     </VerticalStackLayout>
+    
 
 </ContentPage>

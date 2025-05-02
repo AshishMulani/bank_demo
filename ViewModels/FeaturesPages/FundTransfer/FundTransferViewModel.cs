@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using bank_demo.Pages.Fund_Transfer;
 using bank_demo.Services;
+using bank_demo.Pages.Fund_Transfer;
 
 namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 {
@@ -25,14 +25,12 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 
         public FundTransferViewModel()
         {
-            // Initialize the Beneficiary list
             Beneficiaries = new ObservableCollection<Beneficiary>
             {
                 new Beneficiary { Name = "Amit", Description = "Savings Account" },
                 new Beneficiary { Name = "Priya", Description = "Salary Account" }
             };
 
-            // Commands setup
             ShowListCommand = new Command(() =>
             {
                 IsListVisible = true;
@@ -49,7 +47,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 
             SubmitCommand = new Command(async () =>
             {
-                if (!string.IsNullOrEmpty(BeneficiaryName))
+                if (!string.IsNullOrWhiteSpace(BeneficiaryName))
                 {
                     var newBeneficiary = new Beneficiary
                     {
@@ -58,15 +56,12 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                     };
 
                     BeneficiaryService.AddBeneficiary(newBeneficiary);
-
                     Beneficiaries.Add(newBeneficiary);
                     ClearForm();
                     ShowListCommand.Execute(null);
 
-                    await Shell.Current.GoToAsync($"EnterAmountPage?BeneficiaryName={BeneficiaryName}&AccountType={AccountType}");
+                    await Shell.Current.GoToAsync($"{nameof(EnterAmountPage)}?BeneficiaryName={Uri.EscapeDataString(BeneficiaryName)}&AccountType={Uri.EscapeDataString(AccountType)}");
 
-                    // Use GoToAsync with proper route and query parameters
-                    
                 }
             });
 
@@ -74,15 +69,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
             {
                 if (selectedBeneficiary != null)
                 {
-                    // Use Shell.Current.GoToAsync with query parameters properly
-                    var queryParams = new Dictionary<string, string>
-                    {
-                        { "BeneficiaryName", selectedBeneficiary.Name },
-                        { "AccountType", selectedBeneficiary.Description }
-                    };
-
-                    // Use GoToAsync with proper route and query parameters
-                    await Shell.Current.GoToAsync($"EnterAmountPage?BeneficiaryName={Uri.EscapeDataString(selectedBeneficiary.Name)}&AccountType={Uri.EscapeDataString(selectedBeneficiary.Description)}");
+                    await Shell.Current.GoToAsync($"{nameof(EnterAmountPage)}?BeneficiaryName={Uri.EscapeDataString(selectedBeneficiary.Name)}&AccountType={Uri.EscapeDataString(selectedBeneficiary.Description)}");
 
                 }
             });

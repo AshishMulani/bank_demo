@@ -115,7 +115,7 @@
                     </Border>
 
 
-                    <!-- Statement and History -->
+
                     <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="100" >
                         <!-- Statement -->
                         <VerticalStackLayout HorizontalOptions="Center">
@@ -135,29 +135,30 @@
                             <Label Text="Statement" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
 
-                        <!-- QR and Scan Icons -->
-                  
+
+
                         <!-- QR Code -->
-                          <VerticalStackLayout HorizontalOptions="Center">
-                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">  
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
                                 <Border.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                         <GradientStop Color="#ac99ea" Offset="0.1" />
-                                    <GradientStop Color="#478ed1" Offset="3.6" />
-                                </LinearGradientBrush>
+                                        <GradientStop Color="#478ed1" Offset="3.6" />
+                                    </LinearGradientBrush>
                                 </Border.Background>
                                 <Image Source="qrcode.png" WidthRequest="50" HeightRequest="50">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding QRCommand}" />
                                     </Image.GestureRecognizers>
-                                    </Image>
-                                </Border>
-                                <Label Text="My QR Code" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            </VerticalStackLayout>
+                                </Image>
+                            </Border>
+                            <Label Text="My QR Code" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
                     </HorizontalStackLayout>
 
-                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">
-                            <!-- Scan to Pay -->
+
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="100" >
+                        <!-- Scan to Pay -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="100" HeightRequest="100">
                                 <Border.Background>
@@ -191,9 +192,10 @@
                                 </Image>
                             </Border>
                             <Label Text="History" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            </VerticalStackLayout>
-                        
+                        </VerticalStackLayout>
                     </HorizontalStackLayout>
+
+
 
                     <!-- Add Beneficiary & Payments -->
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="100">

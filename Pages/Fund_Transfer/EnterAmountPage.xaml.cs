@@ -12,6 +12,7 @@ public partial class EnterAmountPage : ContentPage
     {
         InitializeComponent();
         BindingContext = new EnterAmountViewModel();
+
     }
 
     public string BeneficiaryName
@@ -24,11 +25,20 @@ public partial class EnterAmountPage : ContentPage
         set => ((ViewModels.FeaturesPages.FundTransfer.EnterAmountViewModel)BindingContext).AccountType = Uri.UnescapeDataString(value);
     }
 
-    protected override bool OnBackPressed()
+    /*private async void OnBackButtonClicked(object sender, EventArgs e)
     {
-        // Ensure the back button does what it needs to do
-        Shell.Current.Navigation.PopAsync();
-        return true;  // Prevents the default back behavior (which might be blocked)
+        await Shell.Current.GoToAsync("//FundTransferPage");
+    }*/
+    protected override bool OnBackButtonPressed()
+    {
+        // Always navigate to HomePage using Shell absolute route
+        Dispatcher.Dispatch(async () =>
+        {
+            await Shell.Current.GoToAsync("//FundTransferPage");
+        });
+        return true; // Prevent default back navigation
     }
+
+
 
 }

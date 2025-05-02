@@ -16,10 +16,10 @@ public class BoolToColorConverter : IValueConverter
                              .Select(p => p.Split('='))
                              .ToDictionary(p => p[0].Trim(), p => p[1].Trim());
 
-            if (parts.TryGetValue("True", out string trueColor))
+            if (parts.TryGetValue("True", out string? trueColor))
                 TrueColor = trueColor;
 
-            if (parts.TryGetValue("False", out string falseColor))
+            if (parts.TryGetValue("False", out string? falseColor))
                 FalseColor = falseColor;
         }
 

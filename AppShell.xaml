@@ -85,11 +85,7 @@
               Shell.FlyoutBehavior="Disabled"
               Shell.NavBarIsVisible="True" />
     
-    <!-- Fund Page -->
-    <ShellContent Route="FundTransferPage"
-              ContentTemplate="{DataTemplate local:FundTransferPage}"
-              Shell.FlyoutBehavior="Disabled"
-              Shell.NavBarIsVisible="True" />
+   
 
 
     <!-- Flyout Menu Items (will show back arrow when navigated) -->
@@ -101,22 +97,7 @@
     </FlyoutItem>
     
     
-    <!--Fund Transfer-->
-    <!-- Fund Transfer Steps -->
-    <ShellContent Route="EnterAmountPage"
-              ContentTemplate="{DataTemplate local:EnterAmountPage}"
-              Shell.FlyoutBehavior="Disabled"
-              Shell.NavBarIsVisible="True" />
     
-    <ShellContent Route="transfermethod"
-              ContentTemplate="{DataTemplate local:TransferMethodPage}"
-              Shell.FlyoutBehavior="Disabled"
-              Shell.NavBarIsVisible="True" />
-    
-    <ShellContent Route="receipt"
-              ContentTemplate="{DataTemplate local:TransactionReceiptPage}"
-              Shell.FlyoutBehavior="Disabled"
-              Shell.NavBarIsVisible="True" />
 
 
 

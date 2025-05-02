@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
 using bank_demo.Services;
+using Microsoft.Maui.ApplicationModel.Communication;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
 
 namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 {
@@ -61,24 +63,40 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 
             //await Shell.Current.GoToAsync("ConfirmationPage"); // Replace with real route
 
-            string summary = $"Name: {BeneficiaryName}\nAccount Type: {AccountType}\nAmount: ₹{Amount}\nRemarks: {Remarks}\nTransfer Mode: {SelectedTransferOption}";
+            string dateTime = DateTime.Now.ToString("dd MMM yyyy hh:mm tt");
 
-            bool confirm = await Shell.Current.DisplayAlert("Confirm Transfer", summary, "Proceed", "Cancel");
+            string summary =
+                $"🧾 Bank Transfer Receipt\n" +
+                $"-----------------------------\n" +
+                $"👤 Beneficiary: {BeneficiaryName}\n" +
+                $"🏦 Account Type: {AccountType}\n" +
+                $"💰 Amount: ₹{Amount}\n" +
+                $"✏️ Remarks: {Remarks}\n" +
+                $"🔄 Transfer Mode: {SelectedTransferOption}\n" +
+                $"📅 Date & Time: {dateTime}\n" +
+                $"-----------------------------";
+
+            bool confirm = await Shell.Current.DisplayAlert("Confirm Transfer", summary, "confirm", "Cancel");
 
             if (confirm)
             {
-                // Proceed to next page or complete transaction
-                await Shell.Current.DisplayAlert("Success", "Transfer Initiated", "OK");
-                if (Shell.Current.Navigation.NavigationStack.Count > 1)
+                // Show a success message with Share option
+                bool share = await Shell.Current.DisplayAlert("Success", "Transfer Initiated", "Share", "OK");
+
+                if (share)
                 {
-                    // Make sure we are not directly on the root page.
-                    await Shell.Current.Navigation.PopAsync();
+                    await Share.RequestAsync(new ShareTextRequest
+                    {
+                        Title = "Fund Transfer Details",
+                        Text = summary
+                    });
                 }
-                else
-                {
-                    // Handle root navigation if necessary, for example, navigate back to the home screen.
-                    await Shell.Current.GoToAsync("Home");
-                }
+
+
+
+
+                
+
 
             }
         }

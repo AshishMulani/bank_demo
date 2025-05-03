@@ -1,4 +1,4 @@
-﻿using bank_demo.Pages; // Adjust this if AppShell is under a different namespace
+﻿using bank_demo; // Adjust this if AppShell is under a different namespace
 
 namespace bank_demo;
 

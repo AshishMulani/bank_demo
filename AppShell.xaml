@@ -84,10 +84,11 @@
               ContentTemplate="{DataTemplate pages:PaymentsPage}"
               Shell.FlyoutBehavior="Disabled"
               Shell.NavBarIsVisible="True" />
+
     
-   
-
-
+    
+    
+    
     <!-- Flyout Menu Items (will show back arrow when navigated) -->
     <FlyoutItem Title="Menu" Icon="menu.png">
         <ShellContent

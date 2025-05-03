@@ -90,7 +90,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                         Title = "Fund Transfer Details",
                         Text = summary
                     });
-                }
+                } 
 
 
 

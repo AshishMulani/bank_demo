@@ -37,6 +37,6 @@ public partial class AddBeneficiaryPage : ContentPage
             await Shell.Current.GoToAsync("..");
         }
     }
-
+     
     }
 

@@ -1,32 +1,57 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages"
              x:Class="bank_demo.Pages.HistoryPage"
-             x:DataType="vm:HistoryViewModel"
-             Title="Transaction History">
+             Title="Transaction History"
+             BackgroundColor="White">
 
-    <ContentPage.BindingContext>
-        <vm:HistoryViewModel/>
-    </ContentPage.BindingContext>
- 
-    <VerticalStackLayout Padding="10">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
 
-        <Label Text="Transaction History"
-               FontSize="22"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Padding="0,20"
-               TextColor="Black" />
+            <Label Text="Filter by:" FontSize="16" />
+            <Picker Title="Select Filter"
+                    SelectedIndex="{Binding SelectedFilterIndex, Mode=TwoWay}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>All Transactions</x:String>
+                        <x:String>Last Week</x:String>
+                        <x:String>Last Month</x:String>
+                        <x:String>Custom Date</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-        <ListView ItemsSource="{Binding Transactions}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Description}" Detail="{Binding Amount}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            <DatePicker IsVisible="{Binding FilterType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Custom}"
+                Date="{Binding CustomDate}" />
 
 
-    </VerticalStackLayout>
+
+            <Label Text="Recent Transactions"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   Margin="0,0,0,10" />
+
+            <!-- Optional: Count of transactions -->
+            <Label Text="{Binding FilteredTransactions.Count, StringFormat='Total: {0} transactions'}"
+                   FontSize="14"
+                   TextColor="Gray"
+                   Margin="0,0,0,10" />
+
+            <CollectionView ItemsSource="{Binding FilteredTransactions}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="#ccc" StrokeThickness="1" BackgroundColor="#f9f9f9" Margin="0,0,0,10" Padding="15" StrokeShape="RoundRectangle 10">
+                            <StackLayout>
+                                <Label Text="{Binding Description}" FontSize="16" />
+                                <Label Text="{Binding Amount, StringFormat='Amount: ₹{0:F2}'}" FontSize="16" TextColor="Green" />
+                                <Label Text="{Binding Date, StringFormat='Date: {0:dd MMM yyyy}'}" FontSize="14" TextColor="Gray" />
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

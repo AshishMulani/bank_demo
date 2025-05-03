@@ -34,6 +34,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(TermsPage), typeof(TermsPage));
 
 
+        
+        // Register route for navigation
         Routing.RegisterRoute(nameof(EnterAmountPage), typeof(EnterAmountPage));
 
 

@@ -6,8 +6,7 @@ public partial class FundTransferPage : ContentPage
     {
         InitializeComponent();
 
-       
-
+      
     }
     
     

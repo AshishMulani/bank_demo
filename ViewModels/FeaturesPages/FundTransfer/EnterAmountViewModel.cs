@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using bank_demo.Pages.Fund_Transfer;
 using bank_demo.Services;
 using Microsoft.Maui.ApplicationModel.Communication;
 using Microsoft.Maui.ApplicationModel.DataTransfer;
@@ -14,11 +15,11 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
             set => SetProperty(ref _beneficiaryName, value);
         }
 
-        private string _accountType;
-        public string AccountType
+        private string _bankName;
+        public string BankName
         {
-            get => _accountType;
-            set => SetProperty(ref _accountType, value);
+            get => _bankName;
+            set => SetProperty(ref _bankName, value);
         }
 
         private string _amount;
@@ -61,7 +62,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                 return;
             }
 
-            //await Shell.Current.GoToAsync("ConfirmationPage"); // Replace with real route
+           
 
             string dateTime = DateTime.Now.ToString("dd MMM yyyy hh:mm tt");
 
@@ -69,7 +70,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                 $"🧾 Bank Transfer Receipt\n" +
                 $"-----------------------------\n" +
                 $"👤 Beneficiary: {BeneficiaryName}\n" +
-                $"🏦 Account Type: {AccountType}\n" +
+                $"🏦 Bank Name: {BankName}\n" +
                 $"💰 Amount: ₹{Amount}\n" +
                 $"✏️ Remarks: {Remarks}\n" +
                 $"🔄 Transfer Mode: {SelectedTransferOption}\n" +
@@ -90,15 +91,11 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                         Title = "Fund Transfer Details",
                         Text = summary
                     });
-                } 
-
-
-
-
-                
-
+                }
+                //await Shell.Current.GoToAsync(nameof(FundTransferPage));
 
             }
+            
         }
 
 

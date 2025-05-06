@@ -26,8 +26,7 @@
 
         <!-- Beneficiary List -->
         <ContentView IsVisible="{Binding IsListVisible}">
-            <CollectionView ItemsSource="{Binding Beneficiaries}"
-                            Margin="0,10,0,0">
+            <CollectionView ItemsSource="{Binding Beneficiaries}" Margin="0,10,0,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Border BackgroundColor="White"
@@ -42,13 +41,10 @@
                                                       CommandParameter="{Binding .}" />
                             </Border.GestureRecognizers>
 
-                            <Grid ColumnDefinitions="2*,1*">
-                                <VerticalStackLayout>
-                                    <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
-                                    <Label Text="{Binding Description}" FontSize="12" TextColor="Gray" />
-                                </VerticalStackLayout>
-                                
-                            </Grid>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                                <Label Text="{Binding BankName}" FontSize="12" TextColor="Gray" />
+                            </VerticalStackLayout>
 
                         </Border>
                     </DataTemplate>
@@ -59,11 +55,12 @@
         <!-- Add Beneficiary Form -->
         <ContentView IsVisible="{Binding IsAddVisible}">
             <VerticalStackLayout Spacing="10">
-                <Entry Placeholder="Savings Account" Text="{Binding AccountType}" />
-                <Entry Placeholder="Account Number" Text="{Binding AccountNumber}"/>
-                <Entry Placeholder="Office Name" Text="{Binding OfficeName}" />
-                <Entry Placeholder="Transfer Limit" Text="{Binding TransferLimit}" />
                 <Entry Placeholder="Beneficiary Name" Text="{Binding BeneficiaryName}" />
+                <Entry Placeholder="Bank Name" Text="{Binding BankName}" />
+                <Entry Placeholder="IFSC Code" Text="{Binding IFSCCode}" />
+                <Entry Placeholder="Account Number" Keyboard="Numeric" Text="{Binding BeneficiaryAccountNumber}" />
+                <Entry Placeholder="Branch" Text="{Binding Branch}" />
+                <Entry Placeholder="Nickname" Text="{Binding Nickname}" />
                 <Button Text="Submit Beneficiary"
                         Command="{Binding SubmitCommand}"
                         BackgroundColor="Blue" TextColor="White" CornerRadius="25"/>

@@ -1,5 +1,6 @@
 ﻿using bank_demo.Pages;
 using bank_demo.Pages.Fund_Transfer;
+using bank_demo.Pages.PaymentsFolder;
 
 namespace bank_demo;
 
@@ -17,9 +18,9 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("About", typeof(About));
         Routing.RegisterRoute("Settings", typeof(Settings));
 
-        Routing.RegisterRoute(nameof(MyQRCodePage), typeof(bank_demo.Pages.MyQRCodePage));
+        Routing.RegisterRoute(nameof(MyQRCodePage), typeof(MyQRCodePage));
         Routing.RegisterRoute(nameof(ScanToPayPage), typeof(ScanToPayPage));
-        Routing.RegisterRoute(nameof(StatementPage), typeof(Pages.StatementPage));
+        Routing.RegisterRoute(nameof(StatementPage), typeof(StatementPage));
         Routing.RegisterRoute(nameof(HistoryPage), typeof(HistoryPage));
         Routing.RegisterRoute(nameof(AddBeneficiaryPage), typeof(AddBeneficiaryPage));
         Routing.RegisterRoute(nameof(PaymentsPage), typeof(PaymentsPage));
@@ -37,6 +38,11 @@ public partial class AppShell : Shell
         
         // Register route for navigation
         Routing.RegisterRoute(nameof(EnterAmountPage), typeof(EnterAmountPage));
+
+        // Register route for Payments options
+        Routing.RegisterRoute(nameof(ContactPage), typeof(ContactPage));
+        Routing.RegisterRoute(nameof(SendMoneyPage), typeof(SendMoneyPage));
+
 
 
         // Navigate to LoginPage after AppShell is loaded

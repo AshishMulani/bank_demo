@@ -45,7 +45,8 @@
                             </Border>
                             <Label Text="QR Code" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
-
+                      
+                        <!--Contactpage-->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" BackgroundColor="SkyBlue" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -56,7 +57,7 @@
                                 </Border.Background>
                                 <Image Source="contactpay.png" WidthRequest="45" HeightRequest="45">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding StatementCommand}" />
+                                        <TapGestureRecognizer Command="{Binding ContactCommand}" />
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Border>
@@ -85,73 +86,8 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- NEFT Option -->
-            <Border BackgroundColor="#fce4ec"
-                    Padding="15"
-                    Stroke="Gray"
-                    StrokeThickness="1"
-                    StrokeShape="RoundRectangle 10">
-                <VerticalStackLayout HorizontalOptions="Center">
-                    <!-- Statement and History -->
-                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="35" >
-                        <!-- Statement -->
-                        <VerticalStackLayout HorizontalOptions="Center">
-                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" BackgroundColor="SkyBlue" WidthRequest="70" HeightRequest="70">
-                                <Border.Background>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="#ac99ea" Offset="0.1" />
-                                        <GradientStop Color="#478ed1" Offset="3.6" />
-                                    </LinearGradientBrush>
-                                </Border.Background>
-                                <Image Source="statement.png" WidthRequest="45" HeightRequest="45">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding StatementCommand}" />
-                                    </Image.GestureRecognizers>
-                                </Image>
-                            </Border>
-                            <Label Text="NEFT" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        </VerticalStackLayout>
-
-                        <!-- QR and Scan Icons -->
-
-                        <!-- QR Code -->
-                        <VerticalStackLayout HorizontalOptions="Center">
-                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
-                                <Border.Background>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="#ac99ea" Offset="0.1" />
-                                        <GradientStop Color="#478ed1" Offset="3.6" />
-                                    </LinearGradientBrush>
-                                </Border.Background>
-                                <Image Source="qrcode.png" WidthRequest="45" HeightRequest="45">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding QRCommand}" />
-                                    </Image.GestureRecognizers>
-                                </Image>
-                            </Border>
-                            <Label Text="RTGS" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        </VerticalStackLayout>
-
-                        <!-- QR Code -->
-                        <VerticalStackLayout HorizontalOptions="Center">
-                            <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
-                                <Border.Background>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="#ac99ea" Offset="0.1" />
-                                        <GradientStop Color="#478ed1" Offset="3.6" />
-                                    </LinearGradientBrush>
-                                </Border.Background>
-                                <Image Source="qrcode.png" WidthRequest="45" HeightRequest="45">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding QRCommand}" />
-                                    </Image.GestureRecognizers>
-                                </Image>
-                            </Border>
-                            <Label Text="IMPS" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </Border>
+            
+       
 
             <!-- IMPS Option -->
             <Border BackgroundColor="#f1f8e9"

@@ -11787,16 +11787,17 @@ public final class R {
     public static final int scantopay=0x7f070100;
     public static final int security=0x7f070101;
     public static final int settings=0x7f070102;
-    public static final int statement=0x7f070103;
-    public static final int terms=0x7f070104;
-    public static final int test_level_drawable=0x7f070105;
-    public static final int thistory=0x7f070106;
-    public static final int toll=0x7f070107;
-    public static final int tooltip_frame_dark=0x7f070108;
-    public static final int tooltip_frame_light=0x7f070109;
-    public static final int transfer_icon=0x7f07010a;
-    public static final int upi=0x7f07010b;
-    public static final int user_icon=0x7f07010c;
+    public static final int splash=0x7f070103;
+    public static final int statement=0x7f070104;
+    public static final int terms=0x7f070105;
+    public static final int test_level_drawable=0x7f070106;
+    public static final int thistory=0x7f070107;
+    public static final int toll=0x7f070108;
+    public static final int tooltip_frame_dark=0x7f070109;
+    public static final int tooltip_frame_light=0x7f07010a;
+    public static final int transfer_icon=0x7f07010b;
+    public static final int upi=0x7f07010c;
+    public static final int user_icon=0x7f07010d;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

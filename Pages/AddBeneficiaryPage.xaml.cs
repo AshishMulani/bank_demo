@@ -1,42 +1,26 @@
-using Microsoft.Maui.Controls;
-using System;
 using bank_demo.ViewModels.FeaturesPages;
-using bank_demo.Pages.Fund_Transfer;
-using bank_demo.Services;
 
-namespace bank_demo.Pages;
-
-public partial class AddBeneficiaryPage : ContentPage
+namespace bank_demo.Pages
 {
-    private readonly bool _fromFundTransfer;
-    public AddBeneficiaryPage(bool fromFundTransferPage = false)
+    [QueryProperty(nameof(AccountNumber), "account_number")]
+    public partial class AddBeneficiaryPage : ContentPage
     {
-        InitializeComponent();
-        BindingContext = new AddBeneficiaryViewModel();
-        _fromFundTransfer = fromFundTransferPage;
-    }
+        private int _accountNumber;
 
-    private async void OnSaveClicked(object sender, EventArgs e)
-    {
-        // Save beneficiary logic here
-
-        var newBeneficiary = new Beneficiary
+        public int AccountNumber
         {
-            Name = "Sample Name",         // You can replace it with real form data
-            Description = "Savings Account" // Replace with real form data
-        };
-
-        if (_fromFundTransfer)
-        {
-            var route = $"EnterAmountPage?BeneficiaryName={Uri.EscapeDataString(newBeneficiary.Name)}&AccountType={Uri.EscapeDataString(newBeneficiary.Description)}";
-            await Shell.Current.GoToAsync(route);
+            get => _accountNumber;
+            set
+            {
+                _accountNumber = value;
+                BindingContext = new AddBeneficiaryViewModel(_accountNumber); // Set the BindingContext when AccountNumber is set
+            }
         }
-        else
+
+        public AddBeneficiaryPage()
         {
-            await DisplayAlert("Success", "Beneficiary added", "OK");
-            await Shell.Current.GoToAsync("..");
+
+            InitializeComponent();
         }
     }
-     
-    }
-
+}

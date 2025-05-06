@@ -14,8 +14,8 @@
         <Label Text="Beneficiary:" FontAttributes="Bold" />
         <Label Text="{Binding BeneficiaryName}" />
 
-        <Label Text="Account Type:" FontAttributes="Bold" />
-        <Label Text="{Binding AccountType}" />
+        <Label Text="BankName:" FontAttributes="Bold" />
+        <Label Text="{Binding BankName}" />
 
         <Label Text="Amount:" />
         <Entry Text="{Binding Amount}" Keyboard="Numeric" />

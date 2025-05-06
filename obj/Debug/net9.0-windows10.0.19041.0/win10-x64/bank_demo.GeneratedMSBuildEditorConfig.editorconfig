@@ -135,6 +135,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.MyQRCodePa
 build_metadata.AdditionalFiles.TargetPath = Pages\MyQRCodePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MyQRCodePage.xaml
 
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/PaymentsFolder/ContactPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.PaymentsFolder.ContactPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PaymentsFolder\ContactPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PaymentsFolder\ContactPage.xaml
+
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/PaymentsFolder/SendMoneyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.PaymentsFolder.SendMoneyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PaymentsFolder\SendMoneyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PaymentsFolder\SendMoneyPage.xaml
+
 [C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/PaymentsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.PaymentsPage.xaml

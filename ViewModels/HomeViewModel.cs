@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Microsoft.Maui.Controls; // ✅ For Command
+using Microsoft.Maui.Controls; 
 using System.Windows.Input;
 using bank_demo.Pages;
 using bank_demo.Pages.Fund_Transfer;

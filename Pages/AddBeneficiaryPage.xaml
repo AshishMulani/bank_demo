@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:bank_demo.ViewModels.FeaturesPages"
              x:Class="bank_demo.Pages.AddBeneficiaryPage"
              Title="Add Beneficiary"
-             BackgroundColor="White"  NavigationPage.HasBackButton="True">
+             x:DataType="viewModels:AddBeneficiaryViewModel">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="15">
 
-            <Label Text="Add New Beneficiary"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+            <!-- Bank Name -->
+            <Entry 
+                Placeholder="Full Name" 
+                Keyboard="Text"
+                Text="{Binding Name}" />
 
-            <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
-        HeightRequest="50" Padding="5">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="10"/>
-                </Border.StrokeShape>
-                  <Entry x:Name="BeneficiaryNameEntry"
-Placeholder="Beneficiary Name"
-FontSize="15"
-BackgroundColor="Transparent"
-TextColor="Black" />
-                </Border>
+            <Entry 
+                Placeholder="Bank Name" 
+                Keyboard="Text"
+                Text="{Binding BankName}" />
 
-            <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
-HeightRequest="50" Padding="5">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="10"/>
-                </Border.StrokeShape>
-                <Entry x:Name="AccountNumberEntry"
-                   Placeholder="Account Number"
-                   Keyboard="Numeric"
-                       BackgroundColor="Transparent"
-                   FontSize="15" TextColor="Black" /></Border>
+            <!-- IFSC Code -->
+            <Entry 
+                Placeholder="IFSC Code" 
+                Keyboard="Text"
+                Text="{Binding IFSCCode}" />
 
-            <Border Stroke="Gray" StrokeThickness="2" BackgroundColor="White"
-HeightRequest="50" Padding="5">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="10"/>
-                </Border.StrokeShape>
-                <Entry x:Name="IFSCEntry"
-                   Placeholder="IFSC Code"
-                       BackgroundColor="Transparent"
-                   FontSize="15" TextColor="Black"/></Border>
+            <!-- Beneficiary Account Number -->
+            <Entry 
+                Placeholder="Beneficiary Account Number" 
+                Keyboard="Numeric"
+                Text="{Binding BeneficiaryAccountNumberText}" />
 
-            <Button Text="Add Beneficiary"
-                    Command="{Binding AddBeneficiaryCommand}"
-                    BackgroundColor="Blue"
- TextColor="White"
- HeightRequest="50"
- CornerRadius="10"/>
+            <!-- Confirm Beneficiary Account Number -->
+            <Entry 
+                Placeholder="Confirm Account Number"
+                Keyboard="Numeric"
+                Text="{Binding ConfirmAccountNumberText}" />
+
+            <!-- Branch -->
+            <Entry 
+                Placeholder="Branch" 
+                Keyboard="Text"
+                Text="{Binding Branch}" />
+
+            <!-- Nickname (Optional) -->
+            <Entry 
+                Placeholder="Nickname (Optional)" 
+                Keyboard="Text"
+                Text="{Binding Nickname}" />
+
+            <!-- Add Beneficiary Button -->
+
+            <Button 
+                Text="Add Beneficiary"
+                Command="{Binding AddBeneficiaryCommand}"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

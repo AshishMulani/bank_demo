@@ -9,11 +9,12 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
     {
         public ObservableCollection<Beneficiary> Beneficiaries { get; set; }
 
-        public string AccountType { get; set; }
-        public string AccountNumber { get; set; }
-        public string OfficeName { get; set; }
-        public string TransferLimit { get; set; }
         public string BeneficiaryName { get; set; }
+        public string BankName { get; set; }
+        public string IFSCCode { get; set; }
+        public int BeneficiaryAccountNumber { get; set; }
+        public string Branch { get; set; }
+        public string Nickname { get; set; }
 
         public bool IsListVisible { get; set; } = true;
         public bool IsAddVisible => !IsListVisible;
@@ -27,8 +28,26 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
         {
             Beneficiaries = new ObservableCollection<Beneficiary>
             {
-                new Beneficiary { Name = "Amit", Description = "Savings Account" },
-                new Beneficiary { Name = "Priya", Description = "Salary Account" }
+                new Beneficiary
+    {
+        Name = "Amit",
+        BankName = "Axis Bank",
+        IFSCCode = "AXIS0001234",
+        BeneficiaryAccountNumber = 123456789,
+        Branch = "Connaught Place",
+        Nickname = "Ami",
+        
+    },
+    new Beneficiary
+    {
+        Name = "Priya",
+        BankName = "HDFC Bank",
+        IFSCCode = "HDFC0005678",
+        BeneficiaryAccountNumber = 987654321,
+        Branch = "MG Road",
+        Nickname = "Pri",
+        
+    }
             };
 
             ShowListCommand = new Command(() =>
@@ -52,7 +71,12 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                     var newBeneficiary = new Beneficiary
                     {
                         Name = BeneficiaryName,
-                        Description = AccountType
+                        BankName = "Default Bank", 
+                        IFSCCode = "DEFAULT000",   
+                        BeneficiaryAccountNumber = 12345678, 
+                        Branch = "Default Branch", 
+                        Nickname = "Nick",         
+                        
                     };
 
                     BeneficiaryService.AddBeneficiary(newBeneficiary);
@@ -60,7 +84,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
                     ClearForm();
                     ShowListCommand.Execute(null);
 
-                    await Shell.Current.GoToAsync($"{nameof(EnterAmountPage)}?BeneficiaryName={Uri.EscapeDataString(BeneficiaryName)}&AccountType={Uri.EscapeDataString(AccountType)}");
+                    
 
                 }
             });
@@ -69,7 +93,7 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
             {
                 if (selectedBeneficiary != null)
                 {
-                    await Shell.Current.GoToAsync($"{nameof(EnterAmountPage)}?BeneficiaryName={Uri.EscapeDataString(selectedBeneficiary.Name)}&AccountType={Uri.EscapeDataString(selectedBeneficiary.Description)}");
+                    await Shell.Current.GoToAsync($"{nameof(EnterAmountPage)}?BeneficiaryName={Uri.EscapeDataString(selectedBeneficiary.Name)}&BankName={Uri.EscapeDataString(selectedBeneficiary.BankName)}");
 
                 }
             });
@@ -77,17 +101,19 @@ namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 
         void ClearForm()
         {
-            AccountType = string.Empty;
-            AccountNumber = string.Empty;
-            OfficeName = string.Empty;
-            TransferLimit = string.Empty;
             BeneficiaryName = string.Empty;
+            BankName = string.Empty;
+            IFSCCode = string.Empty;
+            BeneficiaryAccountNumber =0;
+            Branch = string.Empty;
+            Nickname = string.Empty;
 
-            OnPropertyChanged(nameof(AccountType));
-            OnPropertyChanged(nameof(AccountNumber));
-            OnPropertyChanged(nameof(OfficeName));
-            OnPropertyChanged(nameof(TransferLimit));
             OnPropertyChanged(nameof(BeneficiaryName));
+            OnPropertyChanged(nameof(BankName));
+            OnPropertyChanged(nameof(IFSCCode));
+            OnPropertyChanged(nameof(BeneficiaryAccountNumber));
+            OnPropertyChanged(nameof(Branch));
+            OnPropertyChanged(nameof(Nickname));
         }
     }
 }

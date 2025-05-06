@@ -5,7 +5,7 @@ using bank_demo.ViewModels.FeaturesPages.FundTransfer;
 namespace bank_demo.Pages.Fund_Transfer;
 
 [QueryProperty(nameof(BeneficiaryName), "BeneficiaryName")]
-[QueryProperty(nameof(AccountType), "AccountType")]
+[QueryProperty(nameof(BankName), "BankName")]
 public partial class EnterAmountPage : ContentPage
 {
     public EnterAmountPage()
@@ -19,9 +19,9 @@ public partial class EnterAmountPage : ContentPage
         set => ((EnterAmountViewModel)BindingContext).BeneficiaryName = Uri.UnescapeDataString(value);
     }
 
-    public string AccountType
+    public string BankName
     {
-        set => ((EnterAmountViewModel)BindingContext).AccountType = Uri.UnescapeDataString(value);
+        set => ((EnterAmountViewModel)BindingContext).BankName = Uri.UnescapeDataString(value);
     }
 
     

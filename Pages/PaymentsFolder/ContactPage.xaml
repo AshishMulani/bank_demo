@@ -5,16 +5,27 @@
              xmlns:Services="clr-namespace:bank_demo.Services"
              x:Class="bank_demo.Pages.PaymentsFolder.ContactPage"
              x:DataType="vm:ContactViewModel"
-             Title="Pay via Contact">
+             Title="Pay To Contact">
 
     <ContentPage.BindingContext>
         <vm:ContactViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Select a contact" FontSize="22" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" />
 
-        <CollectionView ItemsSource="{Binding Contacts}" SelectionMode="Single" SelectionChangedCommand="{Binding ContactSelectedCommand}" x:Name="ContactsList">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20" RowSpacing="15">
+    
+
+        <Entry Grid.Row="0"
+            Placeholder="Enter contact number"
+   Text="{Binding EnteredNumber}"
+   Keyboard="Telephone"
+   MaxLength="10"/>
+        
+        
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Contacts}" 
+                        SelectionMode="Single" 
+                        SelectedItem="{Binding SelectedContact}">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" />
             </CollectionView.ItemsLayout>
@@ -33,18 +44,17 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Label Text="Or enter phone number" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+        
 
-        <Entry Placeholder="Enter contact number"
-               Text="{Binding EnteredNumber}"
-               Keyboard="Telephone"
-               MaxLength="10"/>
 
-        <Button Text="Proceed to Pay"
-                Command="{Binding PayWithEnteredNumberCommand}"
+        <Button Grid.Row="2"               
+                Text="Proceed to Pay"
+                Command="{Binding ProceedCommand}"
                 BackgroundColor="#478ed1"
                 TextColor="White"
                 CornerRadius="8"
-                Padding="10,5" />
-    </VerticalStackLayout>
+                Padding="10,5" 
+                HorizontalOptions="Fill"/>
+    
+    </Grid>
 </ContentPage>

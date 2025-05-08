@@ -4,11 +4,53 @@
         <name>bank_demo</name>
     </assembly>
     <members>
+        <member name="T:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.MobileNumber">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.mobileNumber"/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.SelectedOperator">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.selectedOperator"/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.Amount">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.amount"/>
+        </member>
         <member name="T:bank_demo.Resource">
             <summary>
             Android Resource Designer class.
             Exposes the Android Resource designer assembly into the project Namespace.
             </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MobileNumber">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MobileNumber" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedOperator">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedOperator" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Amount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Amount" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MobileNumber">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MobileNumber" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedOperator">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedOperator" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Amount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Amount" generated properties.</summary>
         </member>
     </members>
 </doc>

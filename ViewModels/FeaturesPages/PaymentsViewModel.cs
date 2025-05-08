@@ -12,20 +12,39 @@ namespace bank_demo.ViewModels.FeaturesPages
     public partial class PaymentsViewModel : ObservableObject
     {
         public ICommand ContactCommand { get; }
+        public ICommand MobileRechargeCommand { get; }
         /*public ICommand UPICommand { get; }
         public ICommand DTHCommand { get; }
         public ICommand HomeRentCommand { get; }
         public ICommand LPGCommand { get; }
-        public ICommand MobileRechargeCommand { get; }
+        
         public ICommand ElectricityCommand { get; }
         public ICommand FastagCommand { get; }*/
 
         public PaymentsViewModel()
         {
-            ContactCommand = new Command(async () =>
+            if (Shell.Current != null)
             {
-                await Shell.Current.GoToAsync(nameof(ContactPage));
-            });
+                ContactCommand = new Command(async () =>
+                {
+                    Console.WriteLine("Navigating to ContactPage...");
+                    await Shell.Current.GoToAsync(nameof(ContactPage));
+                });
+
+                MobileRechargeCommand = new Command(async () =>
+                {
+
+                    //await Shell.Current.GoToAsync("//PaymentsPage");
+                    await Shell.Current.GoToAsync("//Home/PaymentsPage/MobileRechargePage");
+
+                });
+            }
+
+            else
+            {
+                Console.WriteLine("Shell.Current is null.");
+            }
+            
             /*UPICommand = new AsyncRelayCommand(NavigateToUPIPage);
             DTHCommand = new AsyncRelayCommand(NavigateToDTHPage);
             HomeRentCommand = new AsyncRelayCommand(NavigateToHomeRentPage);

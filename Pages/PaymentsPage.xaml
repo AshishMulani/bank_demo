@@ -64,7 +64,7 @@
                             <Label Text="Contact" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
 
-                        <!-- QR Code -->
+                        <!-- UPI ID -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -96,9 +96,9 @@
                     StrokeThickness="1"
                     StrokeShape="RoundRectangle 10">
                 <VerticalStackLayout HorizontalOptions="Center">
-                    <!-- Statement and History -->
+                    
                     <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="35" >
-                        <!-- Statement -->
+                        <!-- DTH -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" BackgroundColor="SkyBlue" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -116,9 +116,9 @@
                             <Label Text="DTH" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
 
-                        <!-- QR and Scan Icons -->
+                        
 
-                        <!-- QR Code -->
+                        <!-- HomeRent -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -136,7 +136,7 @@
                             <Label Text="Home Rent" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
 
-                        <!-- QR Code -->
+                        <!-- LPG -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -163,9 +163,9 @@
            StrokeThickness="1"
            StrokeShape="RoundRectangle 10">
                 <VerticalStackLayout HorizontalOptions="Center">
-                    <!-- Statement and History -->
+                    
                     <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="35" >
-                        <!-- Statement -->
+                        <!-- Mobile Recharge -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" BackgroundColor="SkyBlue" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -176,7 +176,7 @@
                                 </Border.Background>
                                 <Image Source="mobile.png" WidthRequest="45" HeightRequest="45">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding StatementCommand}" />
+                                        <TapGestureRecognizer Command="{Binding MobileRechargeCommand}" />
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Border>
@@ -187,9 +187,9 @@
                             </StackLayout>
                         </VerticalStackLayout>
 
-                        <!-- QR and Scan Icons -->
+                        
 
-                        <!-- QR Code -->
+                        <!-- Electricity -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>
@@ -207,7 +207,7 @@
                             <Label Text="Electricity" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
 
-                        <!-- QR Code -->
+                        <!-- FasTag -->
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Border Stroke="Gray" StrokeThickness="0.1" StrokeShape="RoundRectangle 50" Padding="10" WidthRequest="70" HeightRequest="70">
                                 <Border.Background>

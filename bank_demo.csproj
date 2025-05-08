@@ -124,6 +124,9 @@
 	  <MauiXaml Update="Pages\PaymentsFolder\ContactPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\PaymentsFolder\MobileRechargePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\PaymentsFolder\SendMoneyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

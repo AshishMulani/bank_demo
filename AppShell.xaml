@@ -4,6 +4,7 @@
     xmlns:root="clr-namespace:bank_demo"
     xmlns:pages="clr-namespace:bank_demo.Pages"
     xmlns:local="clr-namespace:bank_demo.Pages.Fund_Transfer"
+    xmlns:pay="clr-namespace:bank_demo.Pages.PaymentsFolder"
     x:Class="bank_demo.AppShell"
     Shell.FlyoutBehavior="Flyout"
     x:Name="RootShell">
@@ -85,10 +86,20 @@
               Shell.FlyoutBehavior="Disabled"
               Shell.NavBarIsVisible="True" />
 
-    
-    
-    
-    
+    <ShellContent Route="ContactPage"
+          ContentTemplate="{DataTemplate pay:ContactPage}"
+          Shell.FlyoutBehavior="Disabled"
+          Shell.NavBarIsVisible="True" />
+
+    <ShellContent Route="MobileRechargePage"
+      ContentTemplate="{DataTemplate pay:MobileRechargePage}"
+      Shell.FlyoutBehavior="Disabled"
+      Shell.NavBarIsVisible="True" />
+
+
+
+
+
     <!-- Flyout Menu Items (will show back arrow when navigated) -->
     <FlyoutItem Title="Menu" Icon="menu.png">
         <ShellContent

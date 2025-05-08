@@ -24,6 +24,21 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(HistoryPage), typeof(HistoryPage));
         Routing.RegisterRoute(nameof(AddBeneficiaryPage), typeof(AddBeneficiaryPage));
         Routing.RegisterRoute(nameof(PaymentsPage), typeof(PaymentsPage));
+        // Log navigation to PaymentsPage
+        this.Navigating += (s, e) =>
+        {
+            if (e.Target.Location.OriginalString.Contains(nameof(PaymentsPage)))
+            {
+                Console.WriteLine($"Navigating to: {e.Target.Location}");
+            }
+        };
+        this.Navigated += (s, e) =>
+        {
+            if (e.Current.Location.OriginalString.Contains(nameof(PaymentsPage)))
+            {
+                Console.WriteLine($"Navigated to: {e.Current.Location}");
+            }
+        };
         Routing.RegisterRoute(nameof(FundTransferPage), typeof(FundTransferPage));
 
 
@@ -42,6 +57,8 @@ public partial class AppShell : Shell
         // Register route for Payments options
         Routing.RegisterRoute(nameof(ContactPage), typeof(ContactPage));
         Routing.RegisterRoute(nameof(SendMoneyPage), typeof(SendMoneyPage));
+        Routing.RegisterRoute(nameof(MobileRechargePage), typeof(MobileRechargePage));
+
 
 
 

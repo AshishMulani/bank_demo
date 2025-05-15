@@ -13,6 +13,7 @@
           "Microsoft.Data.SqlClient": "6.0.2",
           "Microsoft.Extensions.Logging.Debug": "9.0.0",
           "Microsoft.Maui.Controls": "9.0.14",
+          "Microsoft.Maui.Resizetizer": "9.0.60",
           "MySql.Data": "9.3.0",
           "QRCoder": "1.6.0",
           "QuestPDF": "2025.4.0",
@@ -451,7 +452,7 @@
           "Microsoft.Maui.Controls.Build.Tasks": "9.0.14",
           "Microsoft.Maui.Controls.Core": "9.0.14",
           "Microsoft.Maui.Controls.Xaml": "9.0.14",
-          "Microsoft.Maui.Resizetizer": "9.0.14"
+          "Microsoft.Maui.Resizetizer": "9.0.60"
         }
       },
       "Microsoft.Maui.Controls.Build.Tasks/9.0.14": {
@@ -648,7 +649,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {},
+      "Microsoft.Maui.Resizetizer/9.0.60": {},
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.SqlServer.Server/1.0.0": {
@@ -1360,12 +1361,12 @@
       "path": "microsoft.maui.graphics.win2d.winui.desktop/9.0.14",
       "hashPath": "microsoft.maui.graphics.win2d.winui.desktop.9.0.14.nupkg.sha512"
     },
-    "Microsoft.Maui.Resizetizer/9.0.14": {
+    "Microsoft.Maui.Resizetizer/9.0.60": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iaiBB5DGY4wD0Py0lIw3FSFQ5qvXcd3A6x0vbqfNpeEEFUddMjR8Wzs4gsNDSugMobXKra7gYuDgbWGlSDrIPw==",
-      "path": "microsoft.maui.resizetizer/9.0.14",
-      "hashPath": "microsoft.maui.resizetizer.9.0.14.nupkg.sha512"
+      "sha512": "sha512-Y3hGFzas1d9k1PN15ImAVh6HwxBLTvSkjMOu0GnB/lEGxlmHQeFhrgNmCZhJm76jZ6/zuDifbYodyzfTWtZIVA==",
+      "path": "microsoft.maui.resizetizer/9.0.60",
+      "hashPath": "microsoft.maui.resizetizer.9.0.60.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

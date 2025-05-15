@@ -10,5 +10,7 @@
     public string Type { get; set; } // Contact, UPI, DTH, etc.
     public string Status { get; set; } // Success, Failed, Pending
     public string Recipient { get; set; }
+    public string amount { get; set; }
+
 
 }

@@ -4,31 +4,75 @@
              xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages.PaymentsVM"
              x:Class="bank_demo.Pages.PaymentsFolder.MobileRechargePage"
              x:DataType="vm:MobileRechargeViewModel"
-             Title="Mobile Recharge">
+             Title="Mobile Recharge"
+             Background="White">
 
     <ContentPage.BindingContext>
         <vm:MobileRechargeViewModel />
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-            <Label Text="Recharge Mobile Number" FontSize="22" FontAttributes="Bold" />
+    <Grid RowDefinitions="*,Auto">
 
+        <ScrollView Grid.Row="0">
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Mobile Number Section -->
+            <Label Text="Recharge Mobile Number" FontSize="22" FontAttributes="Bold" />
             <Entry Placeholder="Enter Mobile Number"
                    Text="{Binding MobileNumber}"
                    Keyboard="Telephone" />
-
-            <Picker Title="Select Operator" ItemsSource="{Binding Operators}" SelectedItem="{Binding SelectedOperator}" />
-
-            <Entry Placeholder="Enter Amount"
-                   Text="{Binding Amount}"
-                   Keyboard="Numeric" />
-
-            <Button Text="Proceed to Recharge"
-                    Command="{Binding RechargeCommand}"
+            
+            <Button Text="Verify Mobile Number"
+                    Command="{Binding VerifyNumberCommand}"
                     BackgroundColor="#478ed1"
                     TextColor="White"
                     CornerRadius="8" />
-        </VerticalStackLayout>
+
+                <!-- Operator and Circle Selection -->
+                <StackLayout IsVisible="{Binding IsOperatorVisible}">
+                    <Label Text="Operator" FontSize="18" FontAttributes="Bold" />
+                    <Picker Title="Operator"
+            ItemsSource="{Binding Operators}"
+            SelectedItem="{Binding SelectedOperator}" />
+                </StackLayout>
+
+                <StackLayout IsVisible="{Binding IsCircleVisible}">
+                    <Label Text="Operator Circle" FontSize="18" FontAttributes="Bold" />
+                    <Picker Title="Circle"
+            ItemsSource="{Binding Circles}"
+            SelectedItem="{Binding SelectedCircle}" />
+                </StackLayout>
+
+
+
+                <!-- Browse Plan Button -->
+            <Button Text="Browse Plans"
+                    Command="{Binding BrowsePlansCommand}"
+                    BackgroundColor="#478ed1"
+                    TextColor="White"
+                    CornerRadius="8" />
+
+            
+
+            <!-- Amount Display - Auto-filled after plan selection -->
+                <Label Text="Selected Amount" FontSize="18" FontAttributes="Bold" />
+
+                <Label FontSize="16"
+                        Text="{Binding SelectedPlanAmount}"
+                        TextColor="{Binding SelectedPlanAmount, Converter={StaticResource NullOrEmptyToColorConverter}}" />
+
+
+
+
+            </VerticalStackLayout>
     </ScrollView>
+        <Button Grid.Row="1"
+                Text="Proceed to Recharge"
+                Command="{Binding RechargeCommand}"
+                BackgroundColor="#478ed1"
+                TextColor="White"
+                CornerRadius="8"
+                Padding="10"
+                Margin="20,0,20,20" />
+    </Grid>
+
 </ContentPage>

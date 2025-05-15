@@ -8,7 +8,7 @@
              x:DataType="vm:HomeViewModel"
              BackgroundColor="White"
              Title="Home"
-             NavigationPage.HasNavigationBar="False"
+             
              Shell.NavBarIsVisible="False"
              Padding="{OnPlatform iOS='0,50,0,0', Android='0,0,0,0'}">
 
@@ -19,8 +19,7 @@
     <Grid>
         <!-- Overlay -->
         <BoxView x:Name="MenuOverlay"
-                 BackgroundColor="Black"
-                 Opacity="0.7"
+                 BackgroundColor="Transparent"
                  IsVisible="False"
                  InputTransparent="False"
                  ZIndex="1"
@@ -65,8 +64,8 @@
                 <Grid HeightRequest="45" WidthRequest="45" HorizontalOptions="Start" VerticalOptions="Center" Padding="10">
                     <ImageButton Source="hamburger_icon.png"
                                  BackgroundColor="Transparent"
-                                 HorizontalOptions="Fill"
-                                 VerticalOptions="Fill"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Center"
                                  Aspect="AspectFit"
                                  Clicked="OnHamburgerClicked"/>
                 </Grid>

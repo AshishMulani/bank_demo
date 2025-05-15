@@ -836,7 +836,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -4168,7 +4168,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -7324,7 +7324,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -10480,7 +10480,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -13630,7 +13630,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -16782,7 +16782,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -19932,7 +19932,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -21508,7 +21508,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -23063,7 +23063,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -24618,7 +24618,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -26167,7 +26167,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -27719,7 +27719,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -29289,7 +29289,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -30727,7 +30727,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -32098,7 +32098,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -33469,7 +33469,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -34834,7 +34834,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -36202,7 +36202,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -37660,7 +37660,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -39348,7 +39348,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -40925,7 +40925,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -42502,7 +42502,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -44073,7 +44073,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -45650,7 +45650,7 @@
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/9.0.14": {
+      "Microsoft.Maui.Resizetizer/9.0.60": {
         "type": "package",
         "build": {
           "buildTransitive/Microsoft.Maui.Resizetizer.props": {},
@@ -48023,10 +48023,10 @@
         "microsoft.maui.graphics.win2d.winui.desktop.nuspec"
       ]
     },
-    "Microsoft.Maui.Resizetizer/9.0.14": {
-      "sha512": "iaiBB5DGY4wD0Py0lIw3FSFQ5qvXcd3A6x0vbqfNpeEEFUddMjR8Wzs4gsNDSugMobXKra7gYuDgbWGlSDrIPw==",
+    "Microsoft.Maui.Resizetizer/9.0.60": {
+      "sha512": "Y3hGFzas1d9k1PN15ImAVh6HwxBLTvSkjMOu0GnB/lEGxlmHQeFhrgNmCZhJm76jZ6/zuDifbYodyzfTWtZIVA==",
       "type": "package",
-      "path": "microsoft.maui.resizetizer/9.0.14",
+      "path": "microsoft.maui.resizetizer/9.0.60",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -48075,7 +48075,7 @@
         "buildTransitive/x64/libSkiaSharp.so",
         "buildTransitive/x86/libHarfBuzzSharp.dll",
         "buildTransitive/x86/libSkiaSharp.dll",
-        "microsoft.maui.resizetizer.9.0.14.nupkg.sha512",
+        "microsoft.maui.resizetizer.9.0.60.nupkg.sha512",
         "microsoft.maui.resizetizer.nuspec"
       ]
     },
@@ -52970,6 +52970,7 @@
       "Microsoft.Data.SqlClient >= 6.0.2",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
+      "Microsoft.Maui.Resizetizer >= 9.0.60",
       "Microsoft.NET.ILLink.Tasks >= 9.0.3",
       "MySql.Data >= 9.3.0",
       "QRCoder >= 1.6.0",
@@ -52980,6 +52981,7 @@
       "Microsoft.Data.SqlClient >= 6.0.2",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
+      "Microsoft.Maui.Resizetizer >= 9.0.60",
       "Microsoft.NET.ILLink.Tasks >= 9.0.3",
       "MySql.Data >= 9.3.0",
       "QRCoder >= 1.6.0",
@@ -52990,6 +52992,7 @@
       "Microsoft.Data.SqlClient >= 6.0.2",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
+      "Microsoft.Maui.Resizetizer >= 9.0.60",
       "Microsoft.NET.ILLink.Tasks >= 9.0.3",
       "MySql.Data >= 9.3.0",
       "QRCoder >= 1.6.0",
@@ -53000,6 +53003,7 @@
       "Microsoft.Data.SqlClient >= 6.0.2",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
+      "Microsoft.Maui.Resizetizer >= 9.0.60",
       "MySql.Data >= 9.3.0",
       "QRCoder >= 1.6.0",
       "QuestPDF >= 2025.4.0"
@@ -53088,6 +53092,10 @@
             "target": "Package",
             "version": "[9.0.14, )"
           },
+          "Microsoft.Maui.Resizetizer": {
+            "target": "Package",
+            "version": "[9.0.60, )"
+          },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
@@ -53146,6 +53154,10 @@
           "Microsoft.Maui.Controls": {
             "target": "Package",
             "version": "[9.0.14, )"
+          },
+          "Microsoft.Maui.Resizetizer": {
+            "target": "Package",
+            "version": "[9.0.60, )"
           },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
@@ -53206,6 +53218,10 @@
             "target": "Package",
             "version": "[9.0.14, )"
           },
+          "Microsoft.Maui.Resizetizer": {
+            "target": "Package",
+            "version": "[9.0.60, )"
+          },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
@@ -53265,6 +53281,10 @@
           "Microsoft.Maui.Controls": {
             "target": "Package",
             "version": "[9.0.14, )"
+          },
+          "Microsoft.Maui.Resizetizer": {
+            "target": "Package",
+            "version": "[9.0.60, )"
           },
           "MySql.Data": {
             "target": "Package",

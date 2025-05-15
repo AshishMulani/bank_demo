@@ -3,69 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:bank_demo.ViewModels.FeaturesPages.FundTransfer"
              x:Class="bank_demo.Pages.Fund_Transfer.FundTransferPage"
-             x:Name="RootPage"
+             x:Name="ThisPage"
              Title="Fund Transfer">
 
-    <ContentPage.BindingContext>
-        <vm:FundTransferViewModel/>
-    </ContentPage.BindingContext>
+    <Grid RowDefinitions="*,Auto" Padding="20">
+        <!-- Scrollable content -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Beneficiary List"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+                <CollectionView ItemsSource="{Binding Beneficiaries}"
+                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Stroke="Gray"
+                                    StrokeShape="RoundRectangle 10"
+                                    Padding="15"
+                                    Margin="5">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference ThisPage}, Path=BindingContext.SelectBeneficiaryCommand}"
+                                          CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
 
-        <!-- Tab Switch -->
-        <Frame BackgroundColor="White" CornerRadius="30" Padding="6" HasShadow="False" HeightRequest="60">
-            <Grid ColumnDefinitions="*,*">
-                <Button Grid.Column="0" Text="Beneficiary List"
-                        Command="{Binding ShowListCommand}"
-                        CornerRadius="25" Margin="0,0,4,0"/>
-                <Button Grid.Column="1" Text="Add Beneficiary"
-                        Command="{Binding ShowAddFormCommand}"
-                        CornerRadius="25" Margin="4,0,0,0"/>
-            </Grid>
-        </Frame>
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="{Binding Name}" FontSize="15" FontAttributes="Bold"/>
+                                    <Label Text="{Binding BankName}" FontSize="14"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-        <!-- Beneficiary List -->
-        <ContentView IsVisible="{Binding IsListVisible}">
-            <CollectionView ItemsSource="{Binding Beneficiaries}" Margin="0,10,0,0">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border BackgroundColor="White"
-                                Stroke="LightGray"
-                                StrokeThickness="1"
-                                StrokeShape="RoundRectangle 15"
-                                Margin="5"
-                                Padding="10">
-
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding BindingContext.BeneficiaryTappedCommand, Source={x:Reference RootPage}}"
-                                                      CommandParameter="{Binding .}" />
-                            </Border.GestureRecognizers>
-
-                            <VerticalStackLayout>
-                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
-                                <Label Text="{Binding BankName}" FontSize="12" TextColor="Gray" />
-                            </VerticalStackLayout>
-
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </ContentView>
-
-        <!-- Add Beneficiary Form -->
-        <ContentView IsVisible="{Binding IsAddVisible}">
-            <VerticalStackLayout Spacing="10">
-                <Entry Placeholder="Beneficiary Name" Text="{Binding BeneficiaryName}" />
-                <Entry Placeholder="Bank Name" Text="{Binding BankName}" />
-                <Entry Placeholder="IFSC Code" Text="{Binding IFSCCode}" />
-                <Entry Placeholder="Account Number" Keyboard="Numeric" Text="{Binding BeneficiaryAccountNumber}" />
-                <Entry Placeholder="Branch" Text="{Binding Branch}" />
-                <Entry Placeholder="Nickname" Text="{Binding Nickname}" />
-                <Button Text="Submit Beneficiary"
-                        Command="{Binding SubmitCommand}"
-                        BackgroundColor="Blue" TextColor="White" CornerRadius="25"/>
             </VerticalStackLayout>
-        </ContentView>
+        </ScrollView>
 
-    </VerticalStackLayout>
+        <!-- Fixed button at bottom -->
+        <Button Grid.Row="1"
+                Text="Add Beneficiary"
+                FontAttributes="Bold"
+                BackgroundColor="#007AFF"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="45"
+                Clicked="OnAddBeneficiaryClicked"/>
+    </Grid>
+
 </ContentPage>

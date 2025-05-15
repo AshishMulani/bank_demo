@@ -83,6 +83,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.AddBenefic
 build_metadata.AdditionalFiles.TargetPath = Pages\AddBeneficiaryPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\AddBeneficiaryPage.xaml
 
+[C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/BeneficiaryDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.BeneficiaryDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\BeneficiaryDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\BeneficiaryDetailPage.xaml
+
 [C:/Users/ashum/source/repos/bank_demo/bank_demo/Pages/BeneficiaryStatusPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bank_demo.Pages.BeneficiaryStatusPage.xaml

@@ -1,119 +1,86 @@
-﻿using System.Collections.ObjectModel;
+﻿using bank_demo.Services;
+using Microsoft.Data.SqlClient;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using bank_demo.Services;
-using bank_demo.Pages.Fund_Transfer;
 
 namespace bank_demo.ViewModels.FeaturesPages.FundTransfer
 {
-    public class FundTransferViewModel : BaseViewModel
+    public class FundTransferViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Beneficiary> Beneficiaries { get; set; }
+        public ObservableCollection<Beneficiary> Beneficiaries { get; set; } = new();
 
-        public string BeneficiaryName { get; set; }
-        public string BankName { get; set; }
-        public string IFSCCode { get; set; }
-        public int BeneficiaryAccountNumber { get; set; }
-        public string Branch { get; set; }
-        public string Nickname { get; set; }
-
-        public bool IsListVisible { get; set; } = true;
-        public bool IsAddVisible => !IsListVisible;
-
-        public ICommand ShowListCommand { get; }
-        public ICommand ShowAddFormCommand { get; }
-        public ICommand SubmitCommand { get; }
-        public ICommand BeneficiaryTappedCommand { get; }
-
-        public FundTransferViewModel()
+        private int _accountNumber;
+        public int AccountNumber
         {
-            Beneficiaries = new ObservableCollection<Beneficiary>
+            get => _accountNumber;
+            set
             {
-                new Beneficiary
-    {
-        Name = "Amit",
-        BankName = "Axis Bank",
-        IFSCCode = "AXIS0001234",
-        BeneficiaryAccountNumber = 123456789,
-        Branch = "Connaught Place",
-        Nickname = "Ami",
-        
-    },
-    new Beneficiary
-    {
-        Name = "Priya",
-        BankName = "HDFC Bank",
-        IFSCCode = "HDFC0005678",
-        BeneficiaryAccountNumber = 987654321,
-        Branch = "MG Road",
-        Nickname = "Pri",
-        
-    }
-            };
+                _accountNumber = value;
+                OnPropertyChanged();
+            }
+        }
 
-            ShowListCommand = new Command(() =>
-            {
-                IsListVisible = true;
-                OnPropertyChanged(nameof(IsListVisible));
-                OnPropertyChanged(nameof(IsAddVisible));
-            });
+        public Command LoadBeneficiariesCommand { get; }
 
-            ShowAddFormCommand = new Command(() =>
-            {
-                IsListVisible = false;
-                OnPropertyChanged(nameof(IsListVisible));
-                OnPropertyChanged(nameof(IsAddVisible));
-            });
+        public FundTransferViewModel(int accountNumber)
+        {
+            AccountNumber = accountNumber;
+            LoadBeneficiariesCommand = new Command(async () => await LoadBeneficiariesAsync());
+            LoadBeneficiariesCommand.Execute(null);
+            SelectBeneficiaryCommand = new Command<Beneficiary>(OnBeneficiarySelected);
+        }
 
-            SubmitCommand = new Command(async () =>
+        private async Task LoadBeneficiariesAsync()
+        {
+            try
             {
-                if (!string.IsNullOrWhiteSpace(BeneficiaryName))
+                using var conn = await DBHelper.GetConnectionAsync();
+                string query = @"SELECT BeneficiaryName, BeneficiaryBankName, BeneficiaryIFSCCode, BeneficiaryAccountNumber, BeneficiaryBankBranch, BeneficiaryNickname
+                                 FROM beneficiaries 
+                                 WHERE LoginedAccountNumber = @AccountNumber";
+
+                using var cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@AccountNumber", AccountNumber);
+
+                using var reader = await cmd.ExecuteReaderAsync();
+
+                Beneficiaries.Clear();
+                while (await reader.ReadAsync())
                 {
-                    var newBeneficiary = new Beneficiary
+                    Beneficiaries.Add(new Beneficiary
                     {
-                        Name = BeneficiaryName,
-                        BankName = "Default Bank", 
-                        IFSCCode = "DEFAULT000",   
-                        BeneficiaryAccountNumber = 12345678, 
-                        Branch = "Default Branch", 
-                        Nickname = "Nick",         
-                        
-                    };
-
-                    BeneficiaryService.AddBeneficiary(newBeneficiary);
-                    Beneficiaries.Add(newBeneficiary);
-                    ClearForm();
-                    ShowListCommand.Execute(null);
-
-                    
-
+                        Name = reader.GetString("BeneficiaryName"),
+                        BankName = reader.GetString("BeneficiaryBankName"),
+                        IFSCCode = reader.GetString("BeneficiaryIFSCCode"),
+                        BeneficiaryAccountNumber = reader.GetInt32("BeneficiaryAccountNumber"),
+                        Branch = reader.GetString("BeneficiaryBankBranch"),
+                        Nickname = reader.IsDBNull(reader.GetOrdinal("BeneficiaryNickname")) ? "" : reader.GetString("BeneficiaryNickname")
+                    });
                 }
-            });
 
-            BeneficiaryTappedCommand = new Command<Beneficiary>(async (selectedBeneficiary) =>
+            }
+            catch (Exception ex)
             {
-                if (selectedBeneficiary != null)
-                {
-                    await Shell.Current.GoToAsync($"{nameof(EnterAmountPage)}?BeneficiaryName={Uri.EscapeDataString(selectedBeneficiary.Name)}&BankName={Uri.EscapeDataString(selectedBeneficiary.BankName)}");
-
-                }
-            });
+                await Shell.Current.DisplayAlert("Error", "Unable to load beneficiaries: " + ex.Message, "OK");
+            }
         }
 
-        void ClearForm()
+        public ICommand SelectBeneficiaryCommand { get; }
+
+        private async void OnBeneficiarySelected(Beneficiary selected)
         {
-            BeneficiaryName = string.Empty;
-            BankName = string.Empty;
-            IFSCCode = string.Empty;
-            BeneficiaryAccountNumber =0;
-            Branch = string.Empty;
-            Nickname = string.Empty;
+            if (selected == null) return;
 
-            OnPropertyChanged(nameof(BeneficiaryName));
-            OnPropertyChanged(nameof(BankName));
-            OnPropertyChanged(nameof(IFSCCode));
-            OnPropertyChanged(nameof(BeneficiaryAccountNumber));
-            OnPropertyChanged(nameof(Branch));
-            OnPropertyChanged(nameof(Nickname));
+            await Shell.Current.GoToAsync($"EnterAmountPage?account_number={AccountNumber}&beneficiary_account_number={selected.BeneficiaryAccountNumber}");
         }
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

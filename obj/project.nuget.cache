@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UTR5BbM/yvg=",
+  "dgSpecHash": "ldaTM5xVPKw=",
   "success": true,
   "projectFilePath": "C:\\Users\\ashum\\source\\repos\\bank_demo\\bank_demo\\bank_demo.csproj",
   "expectedPackageFiles": [
@@ -46,7 +46,7 @@
     "C:\\Users\\ashum\\.nuget\\packages\\microsoft.maui.essentials\\9.0.14\\microsoft.maui.essentials.9.0.14.nupkg.sha512",
     "C:\\Users\\ashum\\.nuget\\packages\\microsoft.maui.graphics\\9.0.14\\microsoft.maui.graphics.9.0.14.nupkg.sha512",
     "C:\\Users\\ashum\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\9.0.14\\microsoft.maui.graphics.win2d.winui.desktop.9.0.14.nupkg.sha512",
-    "C:\\Users\\ashum\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.14\\microsoft.maui.resizetizer.9.0.14.nupkg.sha512",
+    "C:\\Users\\ashum\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.60\\microsoft.maui.resizetizer.9.0.60.nupkg.sha512",
     "C:\\Users\\ashum\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.3\\microsoft.net.illink.tasks.9.0.3.nupkg.sha512",
     "C:\\Users\\ashum\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\ashum\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

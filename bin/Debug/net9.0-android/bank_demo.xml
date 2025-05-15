@@ -13,8 +13,20 @@
         <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.SelectedOperator">
             <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.selectedOperator"/>
         </member>
-        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.Amount">
-            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.amount"/>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.SelectedCircle">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.selectedCircle"/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.SelectedPlanDetails">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.selectedPlanDetails"/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.SelectedPlanAmount">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.selectedPlanAmount"/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.IsOperatorVisible">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.isOperatorVisible"/>
+        </member>
+        <member name="P:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.IsCircleVisible">
+            <inheritdoc cref="F:bank_demo.ViewModels.FeaturesPages.PaymentsVM.MobileRechargeViewModel.isCircleVisible"/>
         </member>
         <member name="T:bank_demo.Resource">
             <summary>
@@ -34,8 +46,20 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedOperator">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedOperator" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Amount">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Amount" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedCircle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedCircle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedPlanDetails">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedPlanDetails" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedPlanAmount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedPlanAmount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsOperatorVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsOperatorVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsCircleVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsCircleVisible" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -49,8 +73,20 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedOperator">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedOperator" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Amount">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Amount" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedCircle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedCircle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedPlanDetails">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedPlanDetails" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedPlanAmount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedPlanAmount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsOperatorVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsOperatorVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsCircleVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsCircleVisible" generated properties.</summary>
         </member>
     </members>
 </doc>

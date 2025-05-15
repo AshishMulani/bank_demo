@@ -83,6 +83,10 @@
               "target": "Package",
               "version": "[9.0.14, )"
             },
+            "Microsoft.Maui.Resizetizer": {
+              "target": "Package",
+              "version": "[9.0.60, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
@@ -141,6 +145,10 @@
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[9.0.14, )"
+            },
+            "Microsoft.Maui.Resizetizer": {
+              "target": "Package",
+              "version": "[9.0.60, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -201,6 +209,10 @@
               "target": "Package",
               "version": "[9.0.14, )"
             },
+            "Microsoft.Maui.Resizetizer": {
+              "target": "Package",
+              "version": "[9.0.60, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
@@ -260,6 +272,10 @@
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[9.0.14, )"
+            },
+            "Microsoft.Maui.Resizetizer": {
+              "target": "Package",
+              "version": "[9.0.60, )"
             },
             "MySql.Data": {
               "target": "Package",

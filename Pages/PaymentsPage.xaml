@@ -14,7 +14,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
 
-            <Label Text="Recharge And Payments"
+            <Label Text="Recharge And Payments" 
                    FontSize="23"
                    FontAttributes="Bold" 
                    HorizontalOptions="Center" TextColor="#478ed1"/>
